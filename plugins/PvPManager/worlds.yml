@@ -1,0 +1,7 @@
+# Some features can be activated per world
+# Here is where you set the worlds where features are active
+# Ignore this file if you just want all worlds to be the same
+
+worlds:
+  ExampleWorld:
+    Player Drop Mode: ALWAYS

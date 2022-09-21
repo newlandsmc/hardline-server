@@ -1,0 +1,1947 @@
+# << Example configuration >>
+#lastchance:    <-- Enchantment name
+#  display: "%group-color%Last Chance"    <-- Display in item lore
+#  description: "Has a chance to heal when on low hearts"    <-- Enchantment Description
+#  applies-to: "Chestplates"    <-- What applies to (display purposes)
+#  type: "DEFENSE"    <-- Enchantment type (controls when enchantment activates)
+#  group: "COMMON"    <-- Enchantment group (For enchanter and right-click random books)
+#  settings:
+#    required-enchants:
+#      - "springs:1" # Can require specific level
+#      - "gears"
+#    not-applyable-with:
+#      - "frozen"
+#  applies:    <-- List of items that it applies
+#    - ALL_CHESTPLATE    <-- Item(s) list
+#  levels:    < -- All Levels are under here
+#    1:     <-- Level indicator
+#      chance: 30    <-- Chance for enchantment to activate
+#      condition: "%victim health% > 5 : %stop%"    <-- Condition (read more about it at Conditions)
+#      effects:    <-- All enchantment effects
+#        - "ADD_HEALTH:2 %victim%"    <-- Effect(s) list
+
+#  Display (String) (No spaces or enchantment will break)
+#    Determines how will enchantment look in item lore
+
+#  Applies-to (String)
+#    Display used in Custom Enchantment books for %description% variable
+
+#  Group (Setting)
+#    INFO: Create enchantment groups in config.yml under enchanter configuration.
+#   Enchantment groups are used for enchanter, to sell specific type books. You can group them
+#   and add a group-wide color, then obtain it with variable %group-color% (shown in example enchantments below).
+
+#  Enchantment Types List: https://ae.advancedplugins.net/enchantments/creating-enchantments/type-list
+
+#  Applies (Material)
+#    Determines which items will have the effects
+#    Latest Materials list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#    NOTICE: You can use "LEATHER_ARMOR, IRON_ARMOR, CHAIN_ARMOR, GOLD_ARMOR or DIAMOND_ARMOR" to
+#    to instantly add availability for all specific armor type pieces.
+#    Use "ALL_ARMOR" to add all armor pieces.
+#    Use "ALL_HELMET" to add all helmets.
+#    Use "ALL_CHESTPLATE" to add all chestplates.
+#    Use "ALL_BOOTS" to add all boots.
+#    Use "ALL_SWORD" to add all swords.
+#    Use "ALL_PICKAXE" to add all pickaxes.
+#    Use "ALL_AXE" to add all axes.
+#    Use "ALL_EDIBLE" to add all foods.
+#    And so on, but make sure to use non plural names of items!
+
+#  Levels (Numbers)
+#    Effects for each level, use as display in examples.
+
+#  Enchantment Effect List: https://ae.advancedplugins.net/enchantments/creating-enchantments/effect-list
+
+#        # You can use tags <random word>word1,word2,word3</random word>, it will get a random word from listed words.
+#        # You can use tags <random number>x-y</random number> while x < y, it will generate a random number between two given integers.
+#        # e.g.: "STEAL_MONEY:<random number>10000-50000</random number>"
+#        # Use <chance>x</chance> to set per-effect chance, x being a chance percentage.
+#        # e.g.: "POTION:SPEED:1:100 %attacker% <chance>25</chance>"
+
+#        # You also may use %victim% or %attacker% flag to give effects to different players (in ATTACK, BOW, DEATH, KILL_PLAYER and DEFENSE types).
+#        # Example usage: - "POTION:POISON:1:50 %attacker%', this will give Level 2 POISON potion effect to the player who attacked.
+#        # If none is provided, effects will be given to the player who had custom enchanted item.
+#        # You can add %combo% instead of numbers, to use number of combo's player has (eg. to limit combo number: "%combo% > 0 && %combo% < 5 : %continue%')
+#        # You can add %damage% instead of numbers, to use number of damage has been done (for ATTACK and DEFENSE)
+
+#  Area of effect: https://ae.advancedplugins.net/enchantments/radius-of-effect-enchantments
+#  Conditions:  https://ae.advancedplugins.net/enchantments/enchantment-conditions
+
+# Settings for enchantments
+# *** This is not a required configuration section and each enchantment doesn't need to have it ***
+#  settings:
+#    required-enchants:
+#      - "springs"
+#    not-applyable-with:
+#      - "frozen"
+#    removeable: false # Makes enchantment non-removeable with blackscrolls
+#    disable-in-enchanter: true # Players can no longer obtain enchantment from Enchanter
+#    disabled-worlds: # List worlds in which enchantment will not work (cAsE sEnSiTiVe)
+#      - "My_World"
+
+replanter:
+  display: "%group-color%Replanter"
+  description: "Replants crops when you break them."
+  applies-to: "Hoes"
+  type: "MINING"
+  group: "UNCOMMON"
+  applies:
+    - ALL_HOE
+  levels:
+    1:
+      condition:
+        - "%is crop% = false : %stop%"
+#        - "%is fully grown% = false : %stop%"
+      effects:
+        - "PLANT_SEEDS:0:%block drop type%"
+experience:
+  display: "%group-color%Experience"
+  description: "Chance to get more experience from ores."
+  applies-to: "Pickaxes"
+  type: "MINING"
+  group: "COMMON"
+  applies:
+    - ALL_PICKAXE
+  levels:
+    1:
+      chance: 15
+      cooldown: 1
+      condition: "%block type% contains ORE : %allow%"
+      effects:
+        - "EXP:<random number>2-5</random number>"
+    2:
+      chance: 30
+      cooldown: 2
+      condition: "%block type% contains ORE : %allow%"
+      effects:
+        - "EXP:<random number>2-5</random number>"
+    3:
+      chance: 45
+      cooldown: 3
+      condition: "%block type% contains ORE : %allow%"
+      effects:
+        - "EXP:<random number>2-5</random number>"
+    4:
+      chance: 60
+      cooldown: 4
+      condition: "%block type% contains ORE : %allow%"
+      effects:
+        - "EXP:<random number>2-5</random number>"
+    5:
+      chance: 75
+      cooldown: 5
+      condition: "%block type% contains ORE : %allow%"
+      effects:
+        - "EXP:<random number>2-5</random number>"
+rebreather:
+  display: "%group-color%Rebreather"
+  description: "Chance to regain air when mining under water."
+  applies-to: "Pickaxes, Shovels"
+  type: "MINING"
+  group: "COMMON"
+  applies:
+    - ALL_PICKAXE
+    - ALL_SHOVEL
+  levels:
+    1:
+      cooldown: 5
+      chance: 10
+      condition: "%is under water% = true : %allow%"
+      effects:
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+    2:
+      cooldown: 5
+      chance: 15
+      condition: "%is under water% = true : %allow%"
+      effects:
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+    3:
+      cooldown: 5
+      chance: 25
+      condition: "%is under water% = true : %allow%"
+      effects:
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+        - "WAIT:5"
+        - "FILL_OXYGEN:20"
+decapitation:
+  display: "%group-color%Decapitation"
+  description: "Opponents head drop on death."
+  applies-to: "Swords, Axes"
+  type: "KILL_PLAYER"
+  group: "COMMON"
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+  levels:
+    1:
+      effects:
+        - "DROP_HEAD %victim%"
+reflect:
+  display: "%group-color%Reflect"
+  description: "Chance to absorb enemy damage and\nreflect it back."
+  applies-to: "Boots, Leggings, Chestplates, Helmets"
+  type: "DEFENSE;DEFENSE_MOB"
+  group: "LEGENDARY"
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      chance: 3
+      cooldown: 5
+      effects:
+        - "STOP_ATTACK"
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    2:
+      chance: 4
+      cooldown: 5
+      effects:
+        - "STOP_ATTACK"
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    3:
+      chance: 5
+      cooldown: 5
+      effects:
+        - "STOP_ATTACK"
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    4:
+      chance: 6
+      cooldown: 5
+      effects:
+        - "STOP_ATTACK"
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    5:
+      chance: 7
+      cooldown: 5
+      effects:
+        - "STOP_ATTACK"
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+veinminer:
+  display: "%group-color%Vein Miner"
+  description: "Mine entire vein of ores"
+  applies-to: "Pickaxes"
+  group: "FABLED"
+  type: "MINING"
+  settings:
+    not-applyable-with:
+      - "hasten"
+      - "haste"
+      - "trench"
+  applies:
+    - ALL_PICKAXE
+  levels:
+    1:
+      effects:
+        - "VEIN_MINE"
+#telepathy:
+#  display: "%group-color%Telepathy"
+#  description: "Automatically places items in your inventory."
+#  applies-to: "Pickaxes, Axes, Hoes, Shovels"
+#  type: "MINING"
+#  group: "UNCOMMON"
+#  applies:
+#    - ALL_PICKAXE
+#    - ALL_SHOVEL
+#    - ALL_AXE
+#    - ALL_HOE
+#  levels:
+#    1:
+#      effects:
+#        - "TP_DROPS"
+enderslayer:
+  display: "%group-color%Ender Slayer"
+  description: "Increases damage dealt to Enderman, Endermite,\n and Ender Dragons."
+  applies-to: "Swords, Axes"
+  type: "ATTACK_MOB"
+  group: "RARE"
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+  levels:
+    1:
+      condition:
+        - "%mob type% = ENDERMAN or %mob type% = ENDERMITE or %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:1 %victim%"
+    2:
+      condition:
+        - "%mob type% = ENDERMAN o %mob type% = ENDERMITE or  %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:1.5 %victim%"
+    3:
+      condition:
+        - "%mob type% = ENDERMAN or %mob type% = ENDERMITE or  %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:2 %victim%"
+    4:
+      condition:
+        - "%mob type% = ENDERMAN or %mob type% = ENDERMITE or  %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:2.5 %victim%"
+    5:
+      condition:
+        - "%mob type% = ENDERMAN or %mob type% = ENDERMITE or  %mob type% = ENDER_DRAGON or %mob type% = ENDERDRAGON : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:3 %victim%"
+hook:
+  display: "%group-color%Hook"
+  description: "Get more exp from fishing."
+  applies-to: "Fishing Rods"
+  type: "CATCH_FISH"
+  group: "COMMON"
+  applies:
+    - FISHING_ROD
+  levels:
+    1:
+      chance: 15
+      cooldown: 12
+      effects:
+        - "EXP:%exp%"
+    2:
+      chance: 25
+      cooldown: 12
+      effects:
+        - "EXP:%exp%"
+    3:
+      chance: 35
+      cooldown: 12
+      effects:
+        - "EXP:%exp%"
+bait:
+  display: "%group-color%Bait"
+  description: "Chance to receive double fishing drops."
+  applies-to: "Fishing Rods"
+  type: "CATCH_FISH"
+  group: "UNCOMMON"
+  applies:
+    - FISHING_ROD
+  levels:
+    1:
+      chance: 15
+      cooldown: 10
+      effects:
+        - "MORE_DROPS:1"
+    2:
+      chance: 18
+      cooldown: 15
+      effects:
+        - "MORE_DROPS:1"
+    3:
+      chance: 26
+      cooldown: 20
+      effects:
+        - "MORE_DROPS:1"
+netherslayer:
+  display: "%group-color%Nether Slayer"
+  description: "Increases damage dealt to nether mobs."
+  applies-to: "Swords, Axes"
+  type: "ATTACK_MOB"
+  group: "RARE"
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+  levels:
+    1:
+      condition:
+        - "%mob type% = BLAZE or %mob type% = GHAST or %mob type% = ZOMBIFIED_PIGLIN or %mob type% = ZOGLIN or %mob type% = WITHER_SKELETON or %mob type% = PIGLIN_BRUTE or %mob type% = PIGLIN or %mob type% = MAGMA_CUBE or %mob type% = HOGLIN or %mob type% = STRIDER : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:1 %victim%"
+    2:
+      condition:
+        - "%mob type% = BLAZE or %mob type% = GHAST or %mob type% = ZOMBIFIED_PIGLIN or %mob type% = ZOGLIN or %mob type% = WITHER_SKELETON or %mob type% = PIGLIN_BRUTE or %mob type% = PIGLIN or %mob type% = MAGMA_CUBE or %mob type% = HOGLIN or %mob type% = STRIDER : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:1.5 %victim%"
+    3:
+      condition:
+        - "%mob type% = BLAZE or %mob type% = GHAST or %mob type% = ZOMBIFIED_PIGLIN or %mob type% = ZOGLIN or %mob type% = WITHER_SKELETON or %mob type% = PIGLIN_BRUTE or %mob type% = PIGLIN or %mob type% = MAGMA_CUBE or %mob type% = HOGLIN or %mob type% = STRIDER : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:2 %victim%"
+    4:
+      condition:
+        - "%mob type% = BLAZE or %mob type% = GHAST or %mob type% = ZOMBIFIED_PIGLIN or %mob type% = ZOGLIN or %mob type% = WITHER_SKELETON or %mob type% = PIGLIN_BRUTE or %mob type% = PIGLIN or %mob type% = MAGMA_CUBE or %mob type% = HOGLIN or %mob type% = STRIDER : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:2.5 %victim%"
+    5:
+      condition:
+        - "%mob type% = BLAZE or %mob type% = GHAST or %mob type% = ZOMBIFIED_PIGLIN or %mob type% = ZOGLIN or %mob type% = WITHER_SKELETON or %mob type% = PIGLIN_BRUTE or %mob type% = PIGLIN or %mob type% = MAGMA_CUBE or %mob type% = HOGLIN or %mob type% = STRIDER : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:3 %victim%"
+allure:
+  display: "%group-color%Allure"
+  description: "Your attack pulls enemies towards you."
+  applies-to: "Swords, Bows"
+  type: "ATTACK;ATTACK_MOB"
+  group: "RARE"
+  applies:
+    - ALL_SWORD
+    - BOW
+  levels:
+    1:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PULL_CLOSER:0.1 %victim%"
+    2:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PULL_CLOSER:0.2 %victim%"
+    3:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PULL_CLOSER:0.3 %victim%"
+poison:
+  display: "%group-color%Poison"
+  description: "Chance of giving poison effect."
+  applies-to: "Bows, Crossbows, Swords, Axes, Tridents"
+  type: "BOW;BOW_MOB;ATTACK;ATTACK_MOB"
+  group: "UNCOMMON"
+  applies:
+    - BOW
+    - CROSSBOW
+    - ALL_SWORD
+    - ALL_AXE
+    - TRIDENT
+  levels:
+    1:
+      chance: 5
+      cooldown: 2
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "POTION:POISON:0:80 %victim%"
+    2:
+      chance: 10
+      cooldown: 2
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "POTION:POISON:0:80 %victim%"
+    3:
+      chance: 15
+      cooldown: 2
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "POTION:POISON:1:80 %victim%"
+springs:
+  display: "%group-color%Springs"
+  description: "Jump boost."
+  applies-to: "Boots"
+  type: "EFFECT_STATIC"
+  group: "RARE"
+  applies:
+    - ALL_BOOTS
+  levels:
+    1:
+      effects:
+        - "POTION:JUMP:0"
+    2:
+      effects:
+        - "POTION:JUMP:1"
+    3:
+      effects:
+        - "POTION:JUMP:2"
+greatsword:
+  display: "%group-color%Greatsword"
+  description: "Increases damage against players who are wielding\na Bows at the time they are hit."
+  applies-to: "Swords"
+  type: "ATTACK"
+  group: "RARE"
+  applies:
+    - ALL_SWORD
+  levels:
+    1:
+      condition:
+        - "%victim is holding% contains BOW : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:1 %victim%"
+    2:
+      condition:
+        - "%victim is holding% contains BOW : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:1.5 %victim%"
+    3:
+      condition:
+        - "%victim is holding% contains BOW : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:2 %victim%"
+    4:
+      condition:
+        - "%victim is holding% contains BOW : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:2.5 %victim%"
+    5:
+      condition:
+        - "%victim is holding% contains BOW : %allow%"
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:3 %victim%"
+bowmaster:
+  display: "%group-color%Bowmaster"
+  description: "Increases damage against players who are wielding\na sword or axe at the time they are hit."
+  applies-to: "Bows, Crossbows"
+  type: "BOW"
+  group: "RARE"
+  settings:
+    not-applyable-with:
+      - "longbow"
+  applies:
+    - BOW
+    - CROSSBOW
+  levels:
+    1:
+      condition:
+        - "%victim is holding% contains SWORD or %victim is holding% contains AXE : %allow%"
+      effects:
+        - "ADD_HARM:1 %victim%"
+    2:
+      condition:
+        - "%victim is holding% contains SWORD or %victim is holding% contains AXE : %allow%"
+      effects:
+        - "ADD_HARM:1.5 %victim%"
+    3:
+      condition:
+        - "%victim is holding% contains SWORD or %victim is holding% contains AXE : %allow%"
+      effects:
+        - "ADD_HARM:2 %victim%"
+    4:
+      condition:
+        - "%victim is holding% contains SWORD or %victim is holding% contains AXE : %allow%"
+      effects:
+        - "ADD_HARM:2.5 %victim%"
+    5:
+      condition:
+        - "%victim is holding% contains SWORD or %victim is holding% contains AXE : %allow%"
+      effects:
+        - "ADD_HARM:3 %victim%"
+arrowdeflect:
+  display: "%group-color%Arrow Deflect"
+  description: "Chance to prevent enemy arrow from dealing\ndamage."
+  applies-to: "Boots, Leggings, Chestplates, Helmets"
+  type: "DEFENSE_BOW"
+  group: "LEGENDARY"
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      chance: 6
+      cooldown: 6
+      effects:
+        - "STOP_ATTACK"
+    2:
+      chance: 10
+      cooldown: 6
+      effects:
+        - "STOP_ATTACK"
+    3:
+      chance: 14
+      cooldown: 6
+      effects:
+        - "STOP_ATTACK"
+    4:
+      chance: 18
+      cooldown: 6
+      effects:
+        - "STOP_ATTACK"
+    5:
+      chance: 25
+      cooldown: 5
+      effects:
+        - "STOP_ATTACK"
+trench:
+  display: "%group-color%Trench"
+  description: "Break in 3x3 area."
+  applies-to: "Pickaxes, Shovels"
+  type: "MINING"
+  group: "FABLED"
+  settings:
+    not-applyable-with:
+      - "hasten"
+      - "haste"
+      - "veinminer"
+  applies:
+    - ALL_PICKAXE
+    - ALL_SPADE
+  levels:
+    1:
+      effects:
+        - "TRENCH:3"
+dodge:
+  display: "%group-color%Dodge"
+  description: "Chance to dodge attack, chance increases\nwhen sneaking."
+  applies-to: "Boots, Leggings, Chestplates, Helmets"
+  type: "DEFENSE;DEFENSE_MOB"
+  group: "LEGENDARY"
+  applies:
+    - ALL_LEGGINGS
+    - ALL_CHESTPLATE
+    - ALL_HELMET
+    - ALL_BOOTS
+  levels:
+    1:
+      chance: 3
+      cooldown: 8
+      condition:
+        - "%victim is sneaking% = true : %chance%+5"
+      effects:
+        - "STOP_ATTACK"
+        - "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 %victim%"
+    2:
+      chance: 5
+      cooldown: 8
+      condition:
+        - "%victim is sneaking% = true : %chance%+5"
+      effects:
+        - "STOP_ATTACK"
+        - "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 %victim%"
+    3:
+      chance: 7
+      cooldown: 8
+      condition:
+        - "%victim is sneaking% = true : %chance%+5"
+      effects:
+        - "STOP_ATTACK"
+        - "PLAY_SOUND:ENTITY_BAT_TAKEOFF:0.7 %victim%"
+enderroots:
+  display: "%group-color%Enderroots"
+  description: "Chance of disabling enderpearls for your\nenemy up to 10 seconds."
+  applies-to: "Swords, Axes, Tridents, Bows, Crossbows"
+  type: "ATTACK;ATTACK_MOB"
+  group: "LEGENDARY"
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+    - BOW
+    - CROSSBOW
+    - TRIDENT
+  levels:
+    1:
+      chance: 15
+      cooldown: 180
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "CANCEL_USE:ENDER_PEARL:100 %victim%"
+        - 'ACTIONBAR:&5*** ENDERPEARLS DEACTIVATED! *** %attacker%'
+        - 'ACTIONBAR:&c*** ENDERPEARLS DEACTIVATED! *** %victim%'
+        - WAIT:105
+        - 'ACTIONBAR:&5*** ENDERPEARLS REACTIVATED! *** %attacker%'
+        - 'ACTIONBAR:&a*** ENDERPEARLS REACTIVATED! *** %victim%'
+    2:
+      chance: 23
+      cooldown: 120
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "CANCEL_USE:ENDER_PEARL:140 %victim%"
+        - 'ACTIONBAR:&5*** ENDERPEARLS DEACTIVATED! *** %attacker%'
+        - 'ACTIONBAR:&c*** ENDERPEARLS DEACTIVATED! *** %victim%'
+        - WAIT:145
+        - 'ACTIONBAR:&5*** ENDERPEARLS REACTIVATED! *** %attacker%'
+        - 'ACTIONBAR:&a*** ENDERPEARLS REACTIVATED! *** %victim%'
+    3:
+      chance: 31
+      cooldown: 60
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "CANCEL_USE:ENDER_PEARL:200 %victim%"
+        - 'ACTIONBAR:&5*** ENDERPEARLS DEACTIVATED! *** %attacker%'
+        - 'ACTIONBAR:&c*** ENDERPEARLS DEACTIVATED! *** %victim%'
+        - WAIT:205
+        - 'ACTIONBAR:&5*** ENDERPEARLS REACTIVATED! *** %attacker%'
+        - 'ACTIONBAR:&a*** ENDERPEARLS REACTIVATED! *** %victim%'
+reinforced:
+  display: "%group-color%Reinforced"
+  description: "Reduces damage dealt to you."
+  applies-to: "Elytra"
+  type: "DEFENSE;DEFENSE_MOB;DEFENSE_BOW"
+  group: "LEGENDARY"
+  applies:
+    - ELYTRA
+  levels:
+    1:
+      effects:
+        - "DECREASE_DAMAGE:8"
+    2:
+      effects:
+        - "DECREASE_DAMAGE:11"
+    3:
+      effects:
+        - "DECREASE_DAMAGE:14"
+    4:
+      effects:
+        - "DECREASE_DAMAGE:17"
+    5:
+      effects:
+        - "DECREASE_DAMAGE:20"
+restore:
+  display: "%group-color%Restore"
+  description: "Upon breaking, item has a chance to lose this\nenchantment and repair half of its durability."
+  applies-to: "Pickaxes, Axes, Shovels, Hoes, Fishing Rods"
+  type: "ITEM_BREAK"
+  group: "FABLED"
+  applies:
+    - ALL_PICKAXE
+    - ALL_SPADE
+    - ALL_AXE
+    - ALL_HOE
+    - FISHING_ROD
+  levels:
+    1:
+      chance: 40
+      effects:
+        - "REMOVE_ENCHANT:restore"
+        - "ADD_DURABILITY_ITEM:<round><math>-1 * (%maximum durability%/2)</math></round>"
+        - "PLAY_SOUND:ITEM_TOTEM_USE"
+    2:
+      chance: 70
+      effects:
+        - "REMOVE_ENCHANT:restore"
+        - "ADD_DURABILITY_ITEM:<round><math>-1 * (%maximum durability%/2)</math></round>"
+        - "PLAY_SOUND:ITEM_TOTEM_USE"
+    3:
+      chance: 100
+      effects:
+        - "REMOVE_ENCHANT:restore"
+        - "ADD_DURABILITY_ITEM:<round><math>-1 * (%maximum durability%/2)</math></round>"
+        - "PLAY_SOUND:ITEM_TOTEM_USE"
+poseidon:
+  display: "%group-color%Poseidon"
+  description: "Increases damage dealt with Tridents."
+  applies-to: "Tridents"
+  type: "BOW;BOW_MOB"
+  group: "RARE"
+  applies:
+    - TRIDENT
+  levels:
+    1:
+      chance: 25
+      condition:
+        - "%attacker is holding% = TRIDENT : %allow%"
+      effects:
+        - "ADD_HARM:1 %victim%"
+    2:
+      chance: 35
+      condition:
+        - "%attacker is holding% = TRIDENT : %allow%"
+      effects:
+        - "ADD_HARM:1.5 %victim%"
+    3:
+      chance: 45
+      condition:
+        - "%attacker is holding% = TRIDENT : %allow%"
+      effects:
+        - "ADD_HARM:2 %victim%"
+    4:
+      chance: 55
+      condition:
+        - "%attacker is holding% = TRIDENT : %allow%"
+      effects:
+        - "ADD_HARM:2.5 %victim%"
+    5:
+      condition:
+        - "%attacker is holding% = TRIDENT : %allow%"
+      effects:
+        - "ADD_HARM:3 %victim%"
+heavy:
+  display: "%group-color%Heavy"
+  description: "Decreases damage from enemy bows by 4% per\nlevel."
+  applies-to: "Boots, Leggings, Chestplates, Helmets"
+  type: "DEFENSE;DEFENSE_BOW"
+  group: "LEGENDARY"
+  settings:
+    not-applyable-with:
+      - "tank"
+      - "valor"
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      condition:
+        - "%attacker is holding% = BOW : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:4 %victim%"
+    2:
+      condition:
+        - "%attacker is holding% = BOW : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:8 %victim%"
+    3:
+      condition:
+        - "%attacker is holding% = BOW : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:12 %victim%"
+    4:
+      condition:
+        - "%attacker is holding% = BOW : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:16 %victim%"
+    5:
+      condition:
+        - "%attacker is holding% = BOW : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:20 %victim%"
+longbow:
+  display: "%group-color%Longbow"
+  description: "Increases damage dealt to enemy players\nthat have a bow in their hands."
+  applies-to: "Bows"
+  type: "BOW"
+  group: "LEGENDARY"
+  settings:
+    not-applyable-with:
+      - "bowmaster"
+  applies:
+    - BOW
+  levels:
+    1:
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - "ADD_HARM:1 %victim%"
+    2:
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - "ADD_HARM:1.5 %victim%"
+    3:
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - "ADD_HARM:2 %victim%"
+    4:
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - "ADD_HARM:2.5 %victim%"
+    5:
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - "ADD_HARM:3 %victim%"
+tank:
+  display: "%group-color%Tank"
+  description: "Decreases damage from enemy axes by 4% per\nlevel."
+  applies-to: "Boots, Leggings, Chestplates, Helmets"
+  type: "DEFENSE;DEFENSE_MOB"
+  group: "LEGENDARY"
+  settings:
+    not-applyable-with:
+      - "tank"
+      - "heavy"
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      condition:
+        - "%attacker is holding% contains AXE : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:4 %victim%"
+    2:
+      condition:
+        - "%attacker is holding% contains AXE : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:8 %victim%"
+    3:
+      condition:
+        - "%attacker is holding% contains AXE : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:12 %victim%"
+    4:
+      condition:
+        - "%attacker is holding% contains AXE : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:16 %victim%"
+    5:
+      condition:
+        - "%attacker is holding% contains AXE : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:20 %victim%"
+valor:
+  display: "%group-color%Valor"
+  description: "Decreases damage from enemy swords by 4% per\nlevel."
+  applies-to: "Boots, Leggings, Chestplates, Helmets"
+  type: "DEFENSE;DEFENSE_MOB"
+  group: "LEGENDARY"
+  settings:
+    not-applyable-with:
+      - "tank"
+      - "heavy"
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      condition:
+        - "%attacker is holding% contains SWORD : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:4 %victim%"
+    2:
+      condition:
+        - "%attacker is holding% contains SWORD : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:8 %victim%"
+    3:
+      condition:
+        - "%attacker is holding% contains SWORD : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:12 %victim%"
+    4:
+      condition:
+        - "%attacker is holding% contains SWORD : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:16 %victim%"
+    5:
+      condition:
+        - "%attacker is holding% contains SWORD : %allow%"
+      effects:
+        - "REMOVE_DAMAGE:20 %victim%"
+critical:
+  display: "%group-color%Critical"
+  description: "Increase damage done with critical hit."
+  applies-to: "Swords, Axes"
+  type: "ATTACK_MOB;ATTACK"
+  group: "RARE"
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+  levels:
+    1:
+      chance: 15
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%is critical% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:10"
+    2:
+      chance: 25
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%is critical% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:15"
+    3:
+      chance: 35
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%is critical% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:20"
+creeperarmor:
+  display: "%group-color%Creeper Armor"
+  description: "Chance to be immune to explosive damage."
+  applies-to: "Boots, Leggings, Chestplates, Helmets"
+  type: "EXPLOSION"
+  group: "LEGENDARY"
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      chance: 10
+      effects:
+        - "STOP_ATTACK"
+        - 'ACTIONBAR:&5*** CREEPER ARMOR *** %victim%'
+    2:
+      chance: 15
+      effects:
+        - "STOP_ATTACK"
+        - 'ACTIONBAR:&5*** CREEPER ARMOR *** %victim%'
+    3:
+      chance: 20
+      effects:
+        - "STOP_ATTACK"
+        - 'ACTIONBAR:&5*** CREEPER ARMOR *** %victim%'
+bleed:
+  display: "%group-color%Bleed"
+  description: "Chance to make your opponent bleed."
+  applies-to: "Bows, Crossbows, Axes, Swords, Tridents"
+  type: "ATTACK;ATTACK_MOB;BOW;BOW_MOB"
+  group: "LEGENDARY"
+  applies:
+    - ALL_AXE
+    - ALL_SWORD
+    - TRIDENT
+    - BOW
+    - CROSSBOW
+  levels:
+    1:
+      chance: 8
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+    2:
+      chance: 15
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+    3:
+      chance: 23
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+    4:
+      chance: 30
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+    5:
+      chance: 44
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+        - "WAIT:20"
+        - "ADD_HARM:<random number>1-3</random number> %victim%"
+lavawalker:
+  display: "%group-color%Lava Walker"
+  description: "Walk on Lava."
+  applies-to: "Boots"
+  type: "EFFECT_STATIC"
+  group: "FABLED"
+  applies:
+    - ALL_BOOTS
+  levels:
+    1:
+      effects:
+        - "LAVA_WALKER"
+chaos:
+  display: "%group-color%Chaos"
+  description: "Chance to deal weakness and wither effects."
+  applies-to: "Tridents"
+  type: "BOW;BOW_MOB"
+  group: "EXOTIC"
+  applies:
+    - TRIDENT
+  levels:
+    1:
+      chance: 2
+      cooldown: 40
+      effects:
+        - "POTION:WITHER:0:60 %victim%"
+        - "POTION:WEAKNESS:0:100 %victim%"
+    2:
+      chance: 4
+      cooldown: 40
+      effects:
+        - "POTION:WITHER:1:60 %victim%"
+        - "POTION:WEAKNESS:0:5 %victim%"
+    3:
+      chance: 6
+      cooldown: 40
+      effects:
+        - "POTION:WITHER:1:60 %victim%"
+        - "POTION:WEAKNESS:0:100 %victim%"
+    4:
+      chance: 8
+      cooldown: 40
+      effects:
+        - "POTION:WITHER:1:60 %victim%"
+        - "POTION:WEAKNESS:0:100 %victim%"
+    5:
+      chance: 10
+      cooldown: 40
+      effects:
+        - "POTION:WITHER:1:60 %victim%"
+        - "POTION:WEAKNESS:0:100 %victim%"
+doublestrike:
+  display: "%group-color%Double Strike"
+  description: "Chance to strike twice."
+  applies-to: "Swords"
+  type: "ATTACK;ATTACK_MOB"
+  group: "EXOTIC"
+  applies:
+    - ALL_SWORD
+  levels:
+    1:
+      chance: 8
+      cooldown: 15
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "WAIT:20"
+        - "ADD_HARM:%damage% %victim%"
+        - "BLOOD %victim%"
+    2:
+      chance: 13
+      cooldown: 15
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "WAIT:20"
+        - "ADD_HARM:%damage% %victim%"
+        - "BLOOD %victim%"
+    3:
+      chance: 19
+      cooldown: 15
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "WAIT:20"
+        - "ADD_HARM:%damage% %victim%"
+        - "BLOOD %victim%"
+gears:
+  display: "%group-color%Gears"
+  description: "Zoom zoom."
+  applies-to: "Boots"
+  type: "EFFECT_STATIC"
+  group: "EXOTIC"
+  applies:
+    - ALL_BOOTS
+  levels:
+    1:
+      effects:
+        - "POTION:SPEED:0"
+    2:
+      effects:
+        - "POTION:SPEED:1"
+    3:
+      effects:
+        - "POTION:SPEED:2"
+inflame:
+  display: "%group-color%Inflame"
+  description: "Chance to set all enemies in radius on fire."
+  applies-to: "Axes, Swords"
+  group: "FABLED"
+  type: "ATTACK;ATTACK_MOB"
+  applies:
+    - ALL_AXE
+    - ALL_SWORD
+  levels:
+    1:
+      chance: 10
+      cooldown: 4
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:FALLING_LAVA:5:0 <aoe> radius=3 target=damageable </aoe>"
+        - "FLAME:40 <aoe> radius=2 target=damageable </aoe>"
+    2:
+      chance: 15
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:FALLING_LAVA:5:0 <aoe> radius=4 target=damageable </aoe>"
+        - "FLAME:50 <aoe> radius=6 target=damageable </aoe>"
+    3:
+      chance: 25
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:FALLING_LAVA:5:0 <aoe> radius=4 target=damageable </aoe>"
+        - "FLAME:60 <aoe> radius=4 target=damageable </aoe>"
+killaura:
+  display: "%group-color%Kill Aura"
+  description: "Chance to damage multiple monsters in radius."
+  applies-to: "Swords, Axes"
+  group: "EXOTIC"
+  type: "ATTACK_MOB"
+  applies:
+    - "ALL_SWORD"
+    - "ALL_AXE"
+  levels:
+    1:
+      chance: 5
+      cooldown: 3
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:SPELL_MOB:5:0 <aoe> radius=3 target=mobs </aoe>"
+        - "ADD_HARM:2 <aoe> radius=2 target=mobs </aoe>"
+    2:
+      chance: 8
+      cooldown: 4
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:SPELL_MOB:5:0 <aoe> radius=3 target=mobs </aoe>"
+        - "ADD_HARM:3 <aoe> radius=2 target=mobs </aoe>"
+    3:
+      chance: 12
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:SPELL_MOB:5:0 <aoe> radius=3 target=mobs </aoe>"
+        - "ADD_HARM:4 <aoe> radius=3 target=mobs </aoe>"
+    4:
+      chance: 15
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:SPELL_MOB:5:0 <aoe> radius=4 target=mobs </aoe>"
+        - "ADD_HARM:5 <aoe> radius=3 target=mobs </aoe>"
+    5:
+      chance: 18
+      cooldown: 6
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "PARTICLE:SPELL_MOB:5:0 <aoe> radius=4 target=mobs </aoe>"
+        - "ADD_HARM:7 <aoe> radius=4 target=mobs </aoe>"
+inquisitive:
+  display: "%group-color%Inquisitive"
+  description: "Increase EXP drops from mobs."
+  applies-to: "Swords, Axes, Tridents"
+  type: "KILL_MOB"
+  group: "EXOTIC"
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+    - TRIDENT
+  levels:
+    1:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "EXP:<math>%exp% * 1.1</math> %victim%"
+    2:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "EXP:<math>%exp% * 1.3</math> %victim%"
+    3:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "EXP:<math>%exp% * 1.5</math> %victim%"
+blacksmith:
+  display: "%group-color%Blacksmith"
+  description: "Chance to repair your weapon in exchange for\ndealing less damage."
+  applies-to: "Axes, Swords"
+  type: "ATTACK;ATTACK_MOB"
+  group: "EXOTIC"
+  applies:
+    - ALL_AXE
+    - ALL_SWORD
+  levels:
+    1:
+      chance: 9
+      cooldown: 3
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_DURABILITY:-1"
+        - "HALF_DAMAGE"
+        - "PARTICLE:BLOCK_DUST:20:1"
+    2:
+      chance: 15
+      cooldown: 3
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_DURABILITY:-1"
+        - "HALF_DAMAGE"
+        - "PARTICLE:BLOCK_DUST:20:1"
+    3:
+      chance: 23
+      cooldown: 3
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_DURABILITY:-1"
+        - "HALF_DAMAGE"
+        - "PARTICLE:BLOCK_DUST:20:1"
+    4:
+      chance: 31
+      cooldown: 3
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_DURABILITY:-2"
+        - "HALF_DAMAGE"
+        - "PARTICLE:BLOCK_DUST:20:1"
+    5:
+      chance: 39
+      cooldown: 3
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "ADD_DURABILITY:-2"
+        - "HALF_DAMAGE"
+        - "PARTICLE:BLOCK_DUST:20:1"
+deadshot:
+  display: "%group-color%Deadshot"
+  description: "Headshots with Bows and Tridents\ndeal more damage."
+  applies-to: "Bows, Crossbows, Tridents"
+  type: "BOW;BOW_MOB"
+  group: "LEGENDARY"
+  applies:
+    - TRIDENT
+    - BOW
+    - CROSSBOW
+  levels:
+    1:
+      condition:
+        - "%is headshot% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:15 %attacker%"
+    2:
+      condition:
+        - "%is headshot% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:25 %attacker%"
+    3:
+      condition:
+        - "%is headshot% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:35 %attacker%"
+    4:
+      condition:
+        - "%is headshot% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:50 %attacker%"
+    5:
+      condition:
+        - "%is headshot% = true : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:100 %attacker%"
+bluntforce:
+  display: "%group-color%Blunt Force"
+  description: "Chance to strike with great force."
+  applies-to: "Axes"
+  group: "RARE"
+  type: "ATTACK;ATTACK_MOB"
+  applies:
+    - "ALL_AXE"
+  levels:
+    1:
+      chance: 15
+      cooldown: 15
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:<random number>25-35</random number> %victim%"
+        - 'ACTIONBAR:&5*** STRUCK WITH GREAT FORCE *** %attacker%'
+    2:
+      chance: 25
+      cooldown: 15
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:<random number>30-45</random number> %victim%"
+        - 'ACTIONBAR:&5*** STRUCK WITH GREAT FORCE *** %attacker%'
+    3:
+      chance: 33
+      cooldown: 15
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:<random number>40-60</random number> %victim%"
+        - 'ACTIONBAR:&5*** STRUCK WITH GREAT FORCE *** %attacker%'
+plummet:
+  display: "%group-color%Plummet"
+  description: "Deal damage to nearby mobs when taking fall\ndamage."
+  applies-to: "Boots"
+  type: "FALL_DAMAGE"
+  group: "LEGENDARY"
+  applies:
+    - ALL_BOOTS
+  levels:
+    1:
+      effects:
+        - "ADD_HARM:2 <aoe> radius=3 target=mobs </aoe>"
+    2:
+      effects:
+        - "ADD_HARM:3 <aoe> radius=5 target=mobs </aoe>"
+    3:
+      effects:
+        - "ADD_HARM:5 <aoe> radius=5 target=mobs </aoe>"
+nightowl:
+  display: "%group-color%Night Owl"
+  description: "Deal more damage to mobs at night."
+  applies-to: "Swords, Axes"
+  type: "ATTACK_MOB"
+  group: "LEGENDARY"
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+  levels:
+    1:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%time% > 12300 or %time% < 23850 : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:25"
+    2:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%time% > 12300 or %time% < 23850 : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:35"
+    3:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%time% > 12300 or %time% < 23850 : %allow%"
+      effects:
+        - "INCREASE_DAMAGE:50"
+momentum:
+  display: "%group-color%Momentum"
+  description: "Chance to gain speed boost with fireworks."
+  applies-to: "Elytra"
+  type: "RIGHT_CLICK"
+  group: "RARE"
+  applies:
+    - ELYTRA
+  levels:
+    1:
+      chance: 15
+      cooldown: 3
+      condition: "%player is holding% = FIREWORK_ROCKET : %allow%"
+      effects:
+        - "POTION:SPEED:0:40"
+    2:
+      chance: 35
+      cooldown: 3
+      condition: "%player is holding% = FIREWORK_ROCKET : %allow%"
+      effects:
+        - "POTION:SPEED:1:60"
+    3:
+      chance: 65
+      cooldown: 3
+      condition: "%player is holding% = FIREWORK_ROCKET : %allow%"
+      effects:
+        - "POTION:SPEED:2:80"
+concussion:
+  display: '%group-color%Concussion'
+  description: "A chance to deal nausea to your victim."
+  applies-to: 'Axes'
+  type: 'ATTACK;ATTACK_MOB'
+  group: 'UNCOMMON'
+  applies:
+    - ALL_AXE
+  levels:
+    1:
+      chance: 13
+      cooldown: 4
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - 'POTION:CONFUSION:0:40 %victim%'
+        - 'POTION:SLOW:1:120 %victim%'
+    2:
+      chance: 19
+      cooldown: 5
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - 'POTION:CONFUSION:0:80 %victim%'
+        - 'POTION:SLOW:1:120 %victim%'
+    3:
+      chance: 24
+      cooldown: 6
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - 'POTION:CONFUSION:0:120 %victim%'
+        - 'POTION:SLOW:1:120 %victim%'
+execute:
+  display: '%group-color%Execute'
+  description: "Damage buff when your target is at low HP."
+  applies-to: 'Swords, Axes'
+  type: 'ATTACK;ATTACK_MOB'
+  group: 'RARE'
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+  levels:
+    1:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:15 %attacker%'
+    2:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:25 %attacker%'
+    3:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:35 %attacker%'
+    4:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:50 %attacker%'
+    5:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:100 %attacker%'
+trap:
+  display: '%group-color%Trap'
+  description: 'Chance to give buffed slowness effect.'
+  applies-to: 'Boots, Leggings, Chestplates, Helmets'
+  type: 'DEFENSE;DEFENSE_MOB'
+  group: 'RARE'
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      chance: 5
+      cooldown: 5
+      effects:
+        - 'POTION:SLOW:2:60 %attacker%'
+        - 'DISABLE_ACTIVATION:gears:3 %victim%'
+        - 'DISABLE_ACTIVATION:springs:3 %victim%'
+    2:
+      chance: 7
+      cooldown: 9
+      effects:
+        - 'POTION:SLOW:2:100 %attacker%'
+        - 'DISABLE_ACTIVATION:gears:5 %victim%'
+        - 'DISABLE_ACTIVATION:springs:5 %victim%'
+    3:
+      chance: 9
+      cooldown: 12
+      effects:
+        - 'POTION:SLOW:2:140 %attacker%'
+        - 'DISABLE_ACTIVATION:gears:7 %victim%'
+        - 'DISABLE_ACTIVATION:springs:7 %victim%'
+rage:
+  display: '%group-color%Rage'
+  description: 'Deal more damage on low HP.'
+  applies-to: 'Swords, Axes'
+  type: 'ATTACK;ATTACK_MOB'
+  group: 'LEGENDARY'
+  applies:
+    - ALL_SWORD
+    - ALL_AXE
+  levels:
+    1:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:15 %attacker%'
+    2:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:25 %attacker%'
+    3:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:35 %attacker%'
+    4:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:50 %attacker%'
+    5:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+        - "%victim health% > 6 : %stop%"
+      effects:
+        - 'INCREASE_DAMAGE:100 %attacker%'
+        - 'ADD_HARM:<random number>1-4</random number> %victim%'
+unfocus:
+  display: '%group-color%Unfocus'
+  description: "Chance to Unfocus target player, reducing their\nout going bow damage by 50% for up to 10\nseconds."
+  applies-to: 'Bows, Crossbows'
+  type: 'BOW;BOW_MOB'
+  group: 'LEGENDARY'
+  applies:
+    - BOW
+    - CROSSBOW
+  levels:
+    1:
+      chance: 7
+      cooldown: 4
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - 'POTION:CONFUSION:0:40 %victim%'
+        - 'HALF_DAMAGE'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN UNFOCUSED *** %victim%'
+        - 'WAIT:45'
+        - 'ACTIONBAR:&a*** YOU''VE REGAINED FOCUS *** %victim%'
+    2:
+      chance: 13
+      cooldown: 4
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - 'POTION:CONFUSION:0:60 %victim%'
+        - 'HALF_DAMAGE'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN UNFOCUSED *** %victim%'
+        - 'WAIT:65'
+        - 'ACTIONBAR:&a*** YOU''VE REGAINED FOCUS *** %victim%'
+    3:
+      chance: 19
+      cooldown: 4
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - 'POTION:CONFUSION:0:80 %victim%'
+        - 'HALF_DAMAGE'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN UNFOCUSED *** %victim%'
+        - 'WAIT:85'
+        - 'ACTIONBAR:&a*** YOU''VE REGAINED FOCUS *** %victim%'
+    4:
+      chance: 25
+      cooldown: 4
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - 'POTION:CONFUSION:1:120 %victim%'
+        - 'HALF_DAMAGE'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN UNFOCUSED *** %victim%'
+        - 'WAIT:125'
+        - 'ACTIONBAR:&a*** YOU''VE REGAINED FOCUS *** %victim%'
+    5:
+      chance: 32
+      cooldown: 4
+      condition:
+        - "%victim is holding% = BOW or %victim is holding% = CROSSBOW : %allow%"
+      effects:
+        - 'POTION:CONFUSION:1:120 %victim%'
+        - 'HALF_DAMAGE'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN UNFOCUSED *** %victim%'
+        - 'WAIT:125'
+        - 'ACTIONBAR:&a*** YOU''VE REGAINED FOCUS *** %victim%'
+impale:
+  display: '%group-color%Impale'
+  description: "Chance to deal double damage to your opponent,\ncausing slowness for some time"
+  applies-to: 'Tridents'
+  type: 'BOW;BOW_MOB'
+  group: 'EXOTIC'
+  applies:
+    - TRIDENT
+  levels:
+    1:
+      chance: 4
+      cooldown: 26
+      effects:
+        - 'DOUBLE_DAMAGE'
+        - 'POTION:SLOW:4:20 %victim%'
+    2:
+      chance: 6
+      cooldown: 24
+      effects:
+        - 'DOUBLE_DAMAGE'
+        - 'POTION:SLOW:4:40 %victim%'
+    3:
+      chance: 8
+      cooldown: 22
+      effects:
+        - 'DOUBLE_DAMAGE'
+        - 'POTION:SLOW:4:60 %victim%'
+    4:
+      chance: 10
+      cooldown: 22
+      effects:
+        - 'DOUBLE_DAMAGE'
+        - 'POTION:SLOW:4:80 %victim%'
+    5:
+      chance: 12
+      cooldown: 22
+      effects:
+        - 'DOUBLE_DAMAGE'
+        - 'POTION:SLOW:4:80 %victim%'
+diminish:
+  display: '%group-color%Diminish'
+  description: "Chance to reduce incoming damage."
+  applies-to: 'Boots, Leggings, Chestplates, Helmets'
+  type: 'DEFENSE;DEFENSE_MOB'
+  group: 'EXOTIC'
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      chance: 4
+      cooldown: 8
+      effects:
+        - 'HALF_DAMAGE'
+    2:
+      chance: 8
+      cooldown: 8
+      effects:
+        - 'HALF_DAMAGE'
+    3:
+      chance: 11
+      cooldown: 8
+      effects:
+        - 'HALF_DAMAGE'
+    4:
+      chance: 15
+      cooldown: 8
+      effects:
+        - 'HALF_DAMAGE'
+    5:
+      chance: 18
+      cooldown: 8
+      effects:
+        - 'HALF_DAMAGE'
+markofthebeast:
+  display: '%group-color%Mark of the Beast'
+  description: "Once an enemy is afflicted with the mark all\nincoming damage is increased by 2x for up to 5\nseconds"
+  applies-to: 'Boots, Leggings, Chestplates, Helmets'
+  type: 'DEFENSE;DEFENSE_MOB'
+  group: 'FABLED'
+  applies:
+    - ALL_ARMOR
+  levels:
+    1:
+      chance: 5
+      cooldown: 600
+      effects:
+        - 'ACTIONBAR:&5*** BEAST MARKED! *** %victim%'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN MARKED! *** %attacker%'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'ACTIONBAR:&5*** BEAST UNMARKED! *** %victim%'
+        - 'ACTIONBAR:&a*** YOU''RE NO LONGER MARKED! *** %attacker%'
+    2:
+      chance: 7
+      cooldown: 500
+      effects:
+        - 'ACTIONBAR:&5*** BEAST MARKED! *** %victim%'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN MARKED! *** %attacker%'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'ACTIONBAR:&5*** BEAST UNMARKED! *** %victim%'
+        - 'ACTIONBAR:&a*** YOU''RE NO LONGER MARKED! *** %attacker%'
+    3:
+      chance: 9
+      cooldown: 400
+      effects:
+        - 'ACTIONBAR:&5*** BEAST MARKED! *** %victim%'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN MARKED! *** %attacker%'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'ACTIONBAR:&5*** BEAST UNMARKED! *** %victim%'
+        - 'ACTIONBAR:&a*** YOU''RE NO LONGER MARKED! *** %attacker%'
+    4:
+      chance: 11
+      cooldown: 300
+      effects:
+        - 'ACTIONBAR:&5*** BEAST MARKED! *** %victim%'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN MARKED! *** %attacker%'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'ACTIONBAR:&5*** BEAST UNMARKED! *** %victim%'
+        - 'ACTIONBAR:&a*** YOU''RE NO LONGER MARKED! *** %attacker%'
+    5:
+      chance: 15
+      cooldown: 200
+      effects:
+        - 'ACTIONBAR:&5*** BEAST MARKED! *** %victim%'
+        - 'ACTIONBAR:&c*** YOU''VE BEEN MARKED! *** %attacker%'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'INCREASE_DAMAGE:50 %attacker%'
+        - 'WAIT:20'
+        - 'ACTIONBAR:&5*** BEAST UNMARKED! *** %victim%'
+        - 'ACTIONBAR:&a*** YOU''RE NO LONGER MARKED! *** %attacker%'
+reach:
+  display: '%group-color%Reach'
+  description: "Increase range underwater"
+  applies-to: 'Tridents'
+  type: 'ATTACK;ATTACK_MOB'
+  group: 'EXOTIC'
+  applies:
+    - TRIDENT
+  levels:
+    1:
+      condition:
+        - "%damage cause% != THORNS : %allow%"
+      effects:
+        - 'REACH:5'
+shockwave:
+  display: '%group-color%Shockwave'
+  description: "Chance to knockback all nearby enemies on block"
+  applies-to: 'Shields'
+  type: 'SHIELD_BLOCK'
+  group: 'RARE'
+  applies:
+    - SHIELD
+  levels:     
+    1:
+      chance: 11
+      cooldown: 15
+      effects:
+        - 'PULL_AWAY <aoe> radius=2 target=damageable </aoe>'
+    2:
+      chance: 22
+      cooldown: 10
+      effects:
+        - 'PULL_AWAY <aoe> radius=3 target=damageable </aoe>'
+    3:
+      chance: 33
+      cooldown: 8
+      effects:
+        - 'PULL_AWAY <aoe> radius=3 target=damageable </aoe>'
+rebuff:
+  display: '%group-color%Rebuff'
+  description: "Chance to absorb enemy damage and reflect it\nback."
+  applies-to: 'Shields'
+  type: 'SHIELD_BLOCK'
+  group: 'FABLED'
+  applies:
+    - SHIELD
+  levels:
+    1:
+      chance: 12
+      cooldown: 5
+      effects:
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    2:
+      chance: 16
+      cooldown: 5
+      effects:
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    3:
+      chance: 20
+      cooldown: 5
+      effects:
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    4:
+      chance: 24
+      cooldown: 5
+      effects:
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+    5:
+      chance: 28
+      cooldown: 5
+      effects:
+        - "ADD_HARM:%damage% %attacker%"
+        - "CACTUS_BREAK %victim%"
+block:
+  display: '%group-color%Block'
+  description: "Chance to passively reduce damage"
+  applies-to: 'Shields'
+  type: 'DEFENSE;DEFENSE_MOB'
+  group: 'EXOTIC'
+  applies:
+    - SHIELD
+  levels:
+    1:
+      condition:
+        - "%attacker is holding% contains SHIELD or %attacker offhand item% contains SHIELD : %allow%"
+      chance: 7
+      cooldown: 5
+      effects:
+        - 'DECREASE_DAMAGE:10'
+    2:
+      condition:
+        - "%attacker is holding% contains SHIELD or %attacker offhand item% contains SHIELD : %allow%"
+      chance: 9
+      cooldown: 5
+      effects:
+        - 'DECREASE_DAMAGE:15'
+    3:
+      condition:
+        - "%attacker is holding% contains SHIELD or %attacker offhand item% contains SHIELD : %allow%"
+      chance: 11
+      cooldown: 5
+      effects:
+        - 'DECREASE_DAMAGE:25'
+    4:
+      condition:
+        - "%attacker is holding% contains SHIELD or %attacker offhand item% contains SHIELD : %allow%"
+      chance: 13
+      cooldown: 5
+      effects:
+        - 'DECREASE_DAMAGE:50'
+    5:
+      condition:
+        - "%attacker is holding% contains SHIELD or %attacker offhand item% contains SHIELD : %allow%"
+      chance: 15
+      cooldown: 5
+      effects:
+        - 'DECREASE_DAMAGE:100'

@@ -1,0 +1,6 @@
+# This global group will be applied to all players
+globalGroup:
+  prefix: ''
+  tabname: ''
+  suffix: ''
+groups: []

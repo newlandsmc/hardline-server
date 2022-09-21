@@ -1,0 +1,83 @@
+#
+#     = = = = = = = = = = = = = = = = =
+#     → JakesRTP Global/Static Config ←
+#     = = = = = = = = = = = = = = = = =
+#
+# For information on how to work with the non-global settings, look at `profiles.md` at
+# https://github.com/donvi-bz/JakesRTP/blob/master/doc
+# Old configs may not run correctly. Please don't edit config-version.
+config-version: 2.0
+
+#### rtp-on-first-join
+# If enabled, when a new player joins the server, they will be teleported according to the given rtpSettings, and will
+#   land in the given world.
+## Notes:
+# The rtpSettings given for `settings` MUST be set to a valid rtpSettings file defined in the folder `/rtpSettings`.
+# The world given for `world` MUST be listed as an `enabled-world` in the given rtpSettings.
+# If you give a player the `jakesrtp.nofirstjoinrtp` permission, this will not affect them.
+rtp-on-first-join:
+  enabled: true
+  settings: 'random-spawn'
+
+#### rtp-on-death
+# Should we have players respawn at a random location after dying?
+# For a player to be rtp-d on death, the following items must be true:
+#   This setting is enabled (`enabled` is set to true)
+#   Either the player has no bed to respawn at OR `respect-beds` is set to false.
+#   Either the player has the permission `jakesrtp.rtpondeath` OR `require-permission` is set to false.
+## Notes:
+# The rtpSettings given for `settings` MUST be set to a valid rtpSettings file defined in the folder `/rtpSettings`.
+# The world given for `world` MUST be listed as an `enabled-world` in the given rtpSettings.
+rtp-on-death:
+  enabled: false
+  settings:
+    world: 'random-death-world'
+    world_nether: 'random-death-nether'
+    world_the_end: 'random-death-end'
+  respect-beds: true
+  respect-anchors: true
+  require-permission: false
+
+#### location-cache-filler
+# Should we cache RTP locations beforehand?
+#   recheck-time      : The amount of time to wait before trying to refill the cache.
+#   between-time      : The amount of time to wait between each location search.
+#   async-wait-timeout: The amount of time to wait for the completion of an async function (Mostly chunk loading)
+## Notes:
+# In all three settings, the unit of time is `seconds`.
+# Unless you specifically don't want this, it should be enabled as it improves performance like crazy!
+# The defaults for this are pretty good, though if you don't use Paper or frequently have people rtp-ing at the same
+#   time, then you may want to increase `between-time` up to `1` or `2`.
+# MAKE SURE TO USE PAPER! No joke, because of this feature, JakesRTP is about 10x faster on paper than plain spigot.
+location-cache-filler:
+  enabled: true
+  recheck-time: 1800
+  between-time: 0
+  async-wait-timeout: 10
+
+#### land-claim-support
+# Should the plugin prevent people from landing in claimed land?
+#   force-disable-all: If set to true, no support will ever be loaded. If false, then the other options are respected.
+#   grief-prevention : Support for the GriefPrevention plugin. Players will not land in claims.
+land-claim-support:
+  force-disable-all: false
+  grief-prevention: true
+  world-guard: true
+  husk-towns: true
+  lands: true
+
+#### logging
+# Which messages do you want to log? You can ignore log messages for settings that are disabled.
+#   rtp-on-player-join  : Obvious
+#   rtp-on-respawn      : Obvious
+#   rtp-on-command      : When a player runs a command on themselves. Ex: `/rtp`
+#   rtp-on-force-command: When a player is FORCED to rtp through something like this: `/forcertp Steve`
+#   rtp-for-queue       : This logs when a new location is cached. (This is the annoying one that can be turned off)
+## Notes:
+# Very little for notes here as all this is for is log messages.
+logging:
+  rtp-on-player-join: true
+  rtp-on-respawn: true
+  rtp-on-command: true
+  rtp-on-force-command: true
+  rtp-for-queue: false

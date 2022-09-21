@@ -1,0 +1,92 @@
+# All settings related to language and the content of messages will be in this file.
+# Currently supported languages:
+#  • English (en)
+#  • Español (es)
+#  • Íslenska (is)
+#  • Magyar (hu)
+#  • Polskie (pl)
+# Note: You MUST type the letters in the parentheses
+language: 'en'
+
+# - - - - - - - - - - -
+# ~ MESSAGE OVERRIDES ~
+# All non-error messages sent by the plugin will appear in the `lang_en` file (and eventually in all other language
+#   files as well), and any message that is stored in the language file can be overridden here. To override a message,
+#   just add the existing key of the message from the original language file, and set the value to whatever message you
+#   would like. A list of all messages can be found here:
+#   https://github.com/donvi-bz/JakesRTP/blob/master/JakesRTP-Core/src/main/resources/translations/lang_en.yml
+# Notes on formatting:
+#   To make a line break, type this: \n
+#   To use a legacy color code, place an `&` in front of a hex digit (0-9|a-f) like this: &8
+#   You can use full hex codes (if you are in the right version of minecraft) like this: {#00FFC8}
+# Finally, if you know another language and would like to help translate this plugin, you can copy the `lang_en.yml`
+#   file found here https://github.com/donvi-bz/JakesRTP/tree/master/JakesRTP-Core/src/main/resources/translations then
+#   translate the new language and make a PR. Or you could send me the file another way. Either way, if you do this,
+#   thank you so much. ♥
+
+# For when an RTP action is denied such as trying to rtp in a world that does not allow rtp.
+#   {0} - The reason the action was denied.
+not-permitted-generic: 'Unknown command. Type "/help" for help.'
+# For when an RTP action is denied because an issue occurred. Ex: an exception occurs while waiting for an rtp location.
+#   {0} - The message from the exception that caused this message to appear.
+#   Note: This is always followed in console by a stack trace (which can not be configured)
+not-permitted-major-error: '&cError. Could not RTP for reason: {0} \n&cPlease check console for more info on why teleportation failed.'
+# For when the reason an action is denied is that rtp is not enabled in the world.
+#   {0} - An identifier that helps with debugging
+not-enabled-in-this-world: 'Unknown command. Type "/help" for help.'
+# For no rtpSettings are found with a given name
+#   {0} - The given name
+no-settings-found-with-name: '&cNo RTP settings found with name {0}'
+# For no rtpSettings are found with a given name WHEN SEARCHED BY A SPECIFIC PLAYER
+# This will both be displayed when the rtpSettings with the given name do not exist, or the player who ran
+#   the `/rtp <settingsName>` command did not have permission to use the settings found.
+#   {0} - The given name
+no-settings-found-with-name-for-player: '&cNo RTP settings found with name {0}'
+# For when too many attempts are made by the plugin to find a point with no success.
+too-many-failed-attempts: 'Too many failed attempts.'
+# For any time the plugin expects a player's name but does not receive the name of a player.
+#   {0} - The name given that did not match a player.
+player-not-found: '&cCould not find player {0}'
+# For when a world name is expected but not received.
+#   {0} - The given name that matched no world names.
+world-not-found: '&cCould not find world {0}'
+# For when a given rtpSettings is expected to contain the given world, but does not.
+#   {0} - The rtpSetting's name
+#   {1} - The world's name
+rtp-settings-no-contain-world: '&cInput mismatch: RtpSettings "{0}&c" does not contain the world "{1}&c" as one of its enabled worlds.'
+# For when a given rtpSettings can only land people in one world but another world is requested instead.
+#   {0} - The rtpSetting's name
+#   {1} - The only valid world name
+rtp-settings-must-use-world: '&cInput mismatch: RtpSettings "{0}&c" can only teleport people in world "{1}&c"'
+# For when a player needs to wait for a cooldown before running the command again.
+#   {0} - The cooldown time (uses READABLE-TIME as defined below)
+need-to-wait-for-cooldown:  '&cNeed to wait for cooldown: {0}'
+# For when a player is waiting  for the warmup before teleporting. (Only gets used if `warmup.time` is greater than 0)
+#   {0} - The number of seconds remaining
+teleporting-in-x-seconds: 'Teleporting in {0} seconds...'
+# For when a player walks during their rtp warmup canceling it. (Only gets used if `warmup.time` is greater than 0)
+moved-during-warmup: 'Movement detected, RTP Canceled.'
+# For when a player is waiting on the warmup and calls `/rtp` again. (Only gets used if `warmup.time` is greater than 0)
+rtp-called-while-in-warmup: '&cYou are already waiting on an RTP warmup!'
+# For when something costs money, but the player does not have enough.
+#   {0} - The cost
+#   {1} - The player's balance
+not-enough-money: '&cYou do not have enough money for this. Cost: {0}&c. Balance: {1}&c.'
+# For when the player had enough money to run the command, but does not have enough by the time they get charged.
+# This will only really happen if a player tries to get around paying by emptying their balance before the warmup is over.
+no-longer-enough-money: '&cYou no longer have the required funds to do this.'
+# For when a player is charged.
+#   {0} - The amount charged
+#   {1} - The amount they player has left
+you-were-charged-x: '&aYou were charged {0}&a and now have {1}'
+# For when an economy error happens. This will most likely not occur.
+#   {0} - The economy error text.
+economy-error: '&cAn economy error occurred: {0}'
+# READABLE-TIME - This is a special case message. Whenever a time needs to be displayed, it will use this for
+#   formatting. Also, each 'word' will only be displayed if the associated number value is greater than 0.
+# Example: 8675 seconds will be formatted as such: `2 hours, 24 minutes, 35 seconds.` Note the absence of days.
+readable-time: '{0}{1}{2}{3}'
+readable-time-word-days:    '{0} days, '
+readable-time-word-hours:   '{0} hours, '
+readable-time-word-minutes: '{0} minutes, '
+readable-time-word-seconds: '{0} seconds.'

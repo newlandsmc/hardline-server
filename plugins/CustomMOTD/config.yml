@@ -1,0 +1,24 @@
+#
+
+verbose: false
+config-version: 1
+counter:
+  enabled: true
+  counter-motd: multipleboost
+messages:
+  motd:
+    not-a-motd: There is no motd by this name.
+    set-motd-restricted: You can't set this motd.
+    set-motd-default: You set the motd to default.
+    set-motd-default-failed: Current motd is already default.
+    counter-increased: Counter increased for <motd>
+    counter-decreased: Counter decreased for <motd>
+    reset: All triggers that cause a custom motd to activate have been reset.
+    set-motd: Custom MOTD has been set to <motdname>
+    current-motd: Custom MOTD is <motdname>
+  command:
+    no-permission: You do not have permission to do this.
+    command-help: TODO
+    command-help-list: '<command>: <usage> - <description>'
+    command-list: 'Available motd: <list>'
+    command-check: The current active motd is <motd>.

@@ -1,0 +1,117 @@
+# ##################################################################
+#                                                                 #
+#                  ChatFilter config file                         #
+#                                                                 #
+#   If you need any help with this plugin or have any problems    #
+#   feel free to join the support discord:                        #
+#   https://discord.gg/VKCwEh94hN                                 #
+#                                                                 #
+# ##################################################################
+
+#  Command aliases: /chatfilter, /cf and /clearchat(for clearing chat only)
+#  /cf help - no permission needed 
+#  /cf reload - chatfilter.reload - reload plugin config
+#  /cf blacklist (list/ip/word) <args/word> - chatfilter.blacklist
+#  /cf whitelist (list/ip/word) <args/word> - chatfilter.whitelist
+#  /cf pause - chatfilter.pause
+
+#  Other permissions:
+#  chatfilter.bypass - bypass all filters(inc: chat, books, signs and anvils)
+#  chatfilter.bypass.chat - bypass in chat only
+#  chatfilter.bypass.command - bypass in commands only
+#  chatfilter.bypass.sign - bypass on a sign only
+#  chatfilter.bypass.anvil - bypass in a anvil only
+#  chatfilter.bypass.book - bypass in books only
+#  chatfilter.bypass.repeat - bypass repeat messsages only
+#  chatfilter.bypass.caps - bypass decapping only
+#  chatfilter.bypass.pause - bypass paused chat only
+#  chatfilter.bypass.swear - bypass all swear filters
+#  chatfilter.bypass.ip - bypass all ip filters
+
+#  chatfilter.view - players with this perm can view filtered messages
+#  chatfilter.blacklist.remove - Able to remove works via the list
+#  chatfilter.whitelist.remove - Able to remove works via the list
+
+#  chatfilter.import - /cf import - import plain text words from data.txt file
+
+
+# #Alvalable languages: - If you make a custom lang file, Feel free to contact me and I'll add it to the plugin for others
+
+# en = English
+# zh = Chinese
+# es = Spanish
+# pl = Polish
+# da = Danish
+
+# Message customisation is done in the messages_(yourlang).properties File
+
+locale: en
+
+settings:
+  # #Block fancy text? Often used with hacked clients 
+  blockFancyChat: true
+  
+  # #Prevent repeat message spam?
+  antiRepeatEnabled: true
+  
+  # #How long till the player can say the same message again (In seconds)
+  repeatDelay: 15
+  
+  # #How similar does the players message need be before it's considered repeating? 0-100%
+  similarMessagePercent: 80%
+  
+  # #Remove excessive caps? Names are exempt
+  deCap: true
+  
+  # #How many UPPERCASE letters before we lower the text string?
+  capsAmount: 7
+  
+  # #Allow URLs? If set to false all URLs will be filtered as advertising
+  allowURL: true
+  
+  # #Colour we use to highlight the matched swear.
+  swearHighLight: '&c%catch%&8'
+
+# # Check commands for swearing/ips?
+checkCommands: true
+
+# Let the regex generator use leet speak? https://en.wikipedia.org/wiki/Leet
+enableLeetSpeak: true
+
+# # Commands to you wish to check
+commands:
+  # #Command name
+  command-name-here: # This is the command we want to filter
+    # #Check the commad for swearing?
+    swear: false
+    # #Check the command for ips?
+    ip: true
+  message:
+    swear: true
+    ip: true
+  tell:
+    swear: true
+    ip: true
+  whisper:
+    swear: true
+    ip: true
+  msg:
+    swear: true
+    ip: true
+  r:
+    swear: true
+    ip: true
+  reply:
+    swear: true
+    ip: true
+
+# #Anti characters spam - 'aaaaaaaaaaaaaaaaaaaa' to 'aaaa'
+antiSpam:
+  # Enable Anti characters spam?
+  enable: true
+  
+  # If the string of repeat characters is above this amount it is then counted as spam
+  aboveAmount: 6
+  
+  # The amount of characters we replace the spam with.
+  replaceAmount: 3

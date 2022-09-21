@@ -1,0 +1,7 @@
+# Player placeholder support (playerName), (playerHealth), for other player options please message me so I can implement them
+# This group of messages has that support
+# Please use MiniMessage for color and other formatting
+no-permission: "<red>You do not have permission to do that."
+invalid-usage: "<red>Incorrect command usage."
+skip-dialogue: "<red>Skip the story? Use /skip to skip."
+log-database: false

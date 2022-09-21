@@ -1,0 +1,46 @@
+# Plugin created by filoghost. All rights reserved.
+# Redistribution of this product is forbidden.
+# 
+# Online documentation: https://filoghost.me/docs/farm-limiter
+
+check-interval: 180
+broadcast:
+  enable: false
+  message: '&6[FarmLimiter]&e Removed {amount} entities.'
+  minimum: 1
+  require-permission: false
+rules:
+- entities: all
+  worlds: all
+  distance: 3
+  max-amount: 25
+- entities: pig, cow, sheep, rabbit
+  worlds: all
+  distance: 5
+  max-amount: 20
+- entities: zombie, skeleton, spider, cave spider, enderman, guardian
+  worlds: all
+  distance: 0.5
+  max-amount: 10
+- entities: turtle
+  worlds: all
+  distance: 5
+  max-amount: 10
+- entities: villager
+  worlds: all
+  distance: 50
+  max-amount: 70
+- entities: pillager, vindicator
+  worlds: all
+  distance: 50
+  max-amount: 15
+- entities: guardian
+  worlds: all
+  distance: 25
+  max-amount: 20
+extra:
+  portal-spawn-rate: 100%
+  exclude-tamed: true
+  exclude-nametagged: false
+group-separately:
+  mythic-mobs: true

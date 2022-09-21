@@ -1,0 +1,6 @@
+spawn:
+  enabled: true
+  message: "<red>There is no spawn on this server!"
+unstuck:
+  enabled: true
+  message: ""

@@ -1,0 +1,77 @@
+# Ignore user data in plugins
+/plugins/Essentials/warps/
+/plugins/Essentials/usermap.csv
+/plugins/Essentials/userdata/
+/plugins/Essentials/userdata-npc-backup/
+/plugins/WorldEdit/sessions/
+/plugins/LiteBans/litebans.mv.db
+/plugins/CoreProtect/database.db
+/plugins/Expeditions/data/
+/plugins/MythicMobs/SavedData/
+/plugins/Chunky/config.yml
+/plugins/AureliumSkills/regiondata/
+/plugins/squaremap/web/tiles/
+/plugins/squaremap/web/map/tiles/
+/plugins/squaremap/data/
+/plugins/AFKPlus/statistics.yml
+/plugins/Bounties/data-storage/
+/plugins/CookieCore/data/
+/plugins/FastTravel/storage/
+/plugins/LibsDisguises/SavedDisguises/
+/plugins/PremiumVanish/data.yml
+/plugins/Citizens/saves.yml
+/plugins/Lands/Data/
+/plugins/Geyser-Spigot/cache/
+/plugins/CarbonChat/users/
+/plugins/BetterCommandSpy/data.yml
+/plugins/NoBedRespawnHandler/data/
+/plugins/Vulcan/violations.txt
+/plugins/OldExpeditions/data/
+/plugins/Towny/data/
+/plugins/Towny/logs/
+/plugins/Towny/backup/
+/plugins/GriefPreventionTP/claims.json
+/plugins/RespawnHandler/data/
+/plugins/VentureChat/PlayerData/
+
+# Ignore bloat in plugins
+/plugins/LuckPerms/libs/
+/plugins/WorldEdit/.archive-unpack/
+/plugins/WorldGuard/cache/
+/plugins/LiteBans/lib/
+/plugins/LiteBans/.version/
+/plugins/BuycraftX/cache/
+/plugins/BuycraftX/gui.cache
+/plugins/Votifier/rsa/
+/plugins/squaremap/web/tiles-bak/
+/plugins/Vulcan/stats.yml
+
+# Ignore worlds
+!worlds/
+worlds/*
+!worlds/world/
+worlds/world/*
+!worlds/world/datapacks/
+worlds/world/datapacks/*
+!worlds/world/datapacks/semivanillamc
+
+application/language/*
+!application/language/gr/
+
+
+# Ignore root directory user data files
+/*.json
+
+# Ignore root directory bloat files
+/.console_history
+/versions/
+/logs/
+/libraries/
+/cache/
+
+# Ignore jars
+*.jar
+
+# Ignore keys
+*.pem
+*.key

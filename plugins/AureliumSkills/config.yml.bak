@@ -1,0 +1,286 @@
+# +----------------------------------------------------------------------------+ #
+# |                       Aurelium Skills Configuration                        | #
+# |                                                                            | #
+# |                    Discord: https://discord.gg/Bh2EZfB                     | #
+# |            Source Code: https://github.com/Archy-X/AureliumSkills          | #
+# |      Config Guide: https://wiki.aurelium.dev/skills/config/main-config     | #
+# +----------------------------------------------------------------------------+ #
+# Plugin made by Archy
+#
+# MySql Options
+mysql:
+  enabled: true
+  host: localhost
+  port: 3306
+  database: aurelium
+  username: aurelium
+  password: NHCwp2D6NU9Z8cX5
+  load-delay: 0
+  always-load-on-join: false
+  ssl: false
+default-language: en
+try-detect-client-language: false
+languages:
+- en
+- es
+- id
+- fr
+- zh-TW
+- tr
+- pl
+- pt-BR
+- zh-CN
+- de
+- lt
+- ru
+- it
+action-bar:
+  enabled: true
+  idle: true
+  ability: true
+  xp: false
+  maxed: false
+  update-period: 5
+  round-xp: false
+  placeholder-api: true
+boss-bar:
+  enabled: true
+  mode: single
+  stay-time: 80
+  update-every: 1
+  round-xp: true
+  display-maxed: true
+  format:
+  - FARMING GREEN SEGMENTED_10
+  - FORAGING RED SEGMENTED_10
+  - MINING PURPLE SEGMENTED_10
+  - FISHING BLUE SEGMENTED_10
+  - EXCAVATION YELLOW SEGMENTED_10
+  - ARCHERY PINK SEGMENTED_10
+  - DEFENSE BLUE SEGMENTED_10
+  - FIGHTING RED SEGMENTED_10
+  - ENDURANCE PURPLE SEGMENTED_10
+  - AGILITY WHITE SEGMENTED_10
+  - ALCHEMY PINK SEGMENTED_10
+  - ENCHANTING PURPLE SEGMENTED_10
+  - SORCERY BLUE SEGMENTED_10
+  - HEALING WHITE SEGMENTED_10
+  - FORGING YELLOW SEGMENTED_10
+base-mana: 20
+enable-roman-numerals: true
+damage-holograms: false
+damage-holograms-scaling: true
+damage-holograms-decimal:
+  display-when-less-than: 1
+  decimal-max-amount: 1
+damage-holograms-offset:
+  x: 0
+  y: 0
+  z: 0
+  random:
+    enabled: false
+    x-min: -0.5
+    x-max: 0.5
+    y-min: 0
+    y-max: 0
+    z-min: -0.5
+    z-max: 0.5
+leaderboards:
+  update-period: 6000
+  update-delay: 6000
+enable-skill-commands: true
+check-block-replace: true
+blocked-check-block-replace-worlds: []
+blocked-check-block-replace-regions: []
+blocked-worlds: []
+blocked-regions: []
+disabled-worlds: []
+disable-in-creative-mode: true
+auto-save:
+  enabled: false
+  interval-ticks: 12000
+skill-money-rewards:
+  enabled: false
+  base: 100
+  multiplier: 10
+leveler:
+  title:
+    enabled: false
+    fade-in: 5
+    stay: 100
+    fade-out: 5
+  sound:
+    enabled: true
+    type: ENTITY_PLAYER_LEVELUP
+    category: MASTER
+    volume: 1.0
+    pitch: 0.5
+  double-check-delay: 20
+modifier:
+  armor:
+    equip-blocked-materials: []
+    timer:
+      enabled: false
+      check-period: 3
+  item:
+    check-period: 3
+    enable-off-hand: true
+  multiplier:
+    enabled: true
+  auto-convert-from-legacy: true
+requirement:
+  enabled: true
+  item:
+    prevent-tool-use: true
+    prevent-weapon-use: true
+    prevent-block-place: true
+  armor:
+    prevent-armor-equip: true
+critical:
+  base-multiplier: 1.5
+  enabled:
+    sword: true
+    bow: true
+    axe: true
+    pickaxe: true
+    shovel: true
+    hoe: true
+    hand: false
+    other: false
+menus:
+  placeholder-api: true
+check-for-updates: false
+automatic-backups:
+  enabled: false
+  minimum-interval-hours: 24
+farming:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+foraging:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+mining:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+fishing:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+excavation:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+archery:
+  enabled: true
+  max-level: 97
+  damage-based: false
+  spawner-multiplier: 1
+  check-multiplier-permissions: true
+defense:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  max: 100.0
+  min: 0
+  allow-shield-blocking: false
+  check-multiplier-permissions: true
+fighting:
+  enabled: true
+  max-level: 97
+  damage-based: false
+  spawner-multiplier: 1
+  check-multiplier-permissions: true
+endurance:
+  enabled: true
+  max-level: 97
+  xp-gain-period: 6000
+  check-multiplier-permissions: true
+agility:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+alchemy:
+  ignore-custom-potions: false
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  give-xp-on-takeout: false
+  give-xp-on-potion-combat: true
+  check-multiplier-permissions: true
+enchanting:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+sorcery:
+  enabled: true
+  max-level: 97
+  check-multiplier-permissions: true
+healing:
+  enabled: true
+  check-cancelled: true
+  max-level: 97
+  exclude-negative-potions: true
+  check-multiplier-permissions: true
+forging:
+  enabled: true
+  max-level: 97
+  check-cancelled: true
+  check-multiplier-permissions: true
+health:
+  modifier: 0.4
+  health-scaling: true
+  hearts:
+    '10': 20
+    '11': 1000
+    '12': 1000 # 26
+    '13': 1000 # 32
+    '14': 1000 # 40
+    '15': 1000 # 52
+    '16': 1000 # 66
+    '17': 1000 # 84
+    '18': 1000 # 104
+    '19': 1000 # 126
+    '20': 1000 # 150
+  hp-indicator-scaling: 1
+  update-delay: 0
+  force-base-health: false
+  keep-full-on-increase: true
+strength:
+  modifier: 0.5
+  hand-damage: true
+  bow-damage: true
+  display-damage-with-health-scaling: true
+  use-percent: true
+toughness:
+  new-modifier: 0.3
+regeneration:
+  custom-regen-mechanics: false
+  base-regen: 1
+  saturated-modifier: 0.007
+  hunger-full-modifier: 0.006
+  hunger-almost-full-modifier: 0.005
+  custom-regen-options:
+    saturated-delay: 20
+    hunger-delay: 60
+  mana-modifier: 0.1
+  base-mana-regen: 1
+luck:
+  modifier: 0.1
+  double-drop-enabled: true
+  double-drop-modifier: 0.005
+  double-drop-percent-max: 100
+wisdom:
+  anvil-cost-modifier: 0.25
+  experience-modifier: 0.01
+  allow-over-max-mana: true
+  max-mana-per-wisdom: 2.0

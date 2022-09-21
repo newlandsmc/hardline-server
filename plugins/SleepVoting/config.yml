@@ -1,0 +1,15 @@
+night-start: 12542
+night-end: 23459
+world: 'world' # the name of the overworld world.
+votes-required: 0.51 # max players * votes-required = required votes, so 0.5 = 50% of max players
+reset-weather: true
+smooth:
+  enabled: true
+  add-ticks: 150 # How many ticks to add to the time.
+  run-ticks: 1 # Intervals to run the runnable in ticks
+action-bar:
+  enabled: true
+  bar: '<white>%player% has slept. %votes%/%required% votes to skip night.'
+  skipping-night:
+    use-vanilla-bar: true
+    bar: '<white>Skipping the night...' # This will be displayed if use-vanilla-bar is false.

@@ -1,0 +1,123 @@
+commands:
+  - help
+  - info
+  - rules
+
+menu-name: 'Help Menu'
+
+items:
+  3:
+    material: 'ENCHANTED_BOOK'
+    name: '&cHelp'
+    lore:
+      - '&fTutorials, list of commands,'
+      - '&fand useful links.'
+      - ''
+      - '&8Click to open book.'
+    commands:
+      - 'info help'
+links:
+  store: 'https://store.semivanilla.com'
+  map: 'https://semivanilla.com/features/map'
+  vote: 'https://semivanilla.com/vote'
+  website: 'https://semivanilla.com'
+  discord: 'https://discord.gg/3WzZ3x6wGp'
+  rules: 'https://semivanilla.com/rules'
+
+book:
+  help:
+    pages: 21
+    0:
+      - 'To be written.'
+      - ''
+      - ' - Mention /l'
+  store:
+    pages: 1
+    0:
+      - '<click:open_url:%store-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%store-link%>         <bold>Store</bold></click>'
+      - ''
+      - '<click:open_url:%store-link%>Help us share the</click>'
+      - '<click:open_url:%store-link%>adventure for years</click>'
+      - '<click:open_url:%store-link%>to come!</click>'
+      - ''
+      - '<click:open_url:%store-link%>Donate to support the</click>'
+      - '<click:open_url:%store-link%>server. Thank you!</click>'
+      - ''
+      - ''
+      - '<click:open_url:%store-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+  map:
+    pages: 1
+    0:
+      - '<click:open_url:%map-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%map-link%>           <bold>Map</bold></click>'
+      - ''
+      - '<click:open_url:%map-link%>View the entire</click>'
+      - '<click:open_url:%map-link%>overworld and</click>'
+      - '<click:open_url:%map-link%>player''s locations in</click>'
+      - '<click:open_url:%map-link%>real time!</click>'
+      - ''
+      - '<click:open_url:%map-link%>Shows approximate</click>'
+      - '<click:open_url:%map-link%>location.</click>'
+      - ''
+      - '<click:open_url:%map-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+  vote:
+    pages: 1
+    0:
+      - '<click:open_url:%vote-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%vote-link%>     <bold>Vote Portal</bold></click>'
+      - ''
+      - '<click:open_url:%vote-link%>Support us by voting</click>'
+      - '<click:open_url:%vote-link%>every day and get</click>'
+      - '<click:open_url:%vote-link%>rewarded for it!</click>'
+      - ''
+      - '<click:open_url:%vote-link%>/spoils to claim</click>'
+      - '<click:open_url:%vote-link%>rewards.</click>'
+      - ''
+      - ''
+      - '<click:open_url:%vote-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+  website:
+    pages: 1
+    0:
+      - '<click:open_url:%website-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%website-link%>        <bold>Website</bold></click>'
+      - ''
+      - '<click:open_url:%website-link%>Bookmark us! Favorite</click>'
+      - '<click:open_url:%website-link%>us! Whatever you wish.</click>'
+      - ''
+      - '<click:open_url:%website-link%>This is the portal to</click>'
+      - '<click:open_url:%website-link%>our vote sites, store,</click>'
+      - '<click:open_url:%website-link%>Discord, and more.</click>'
+      - ''
+      - ''
+      - '<click:open_url:%website-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+  discord:
+    pages: 1
+    0:
+      - '<click:open_url:%discord-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%discord-link%>        <bold>Discord</bold></click>'
+      - ''
+      - '<click:open_url:%discord-link%>Join the community!</click>'
+      - ''
+      - '<click:open_url:%discord-link%>Discord is the official</click>'
+      - '<click:open_url:%discord-link%>place for server</click>'
+      - '<click:open_url:%discord-link%>announcements and</click>'
+      - '<click:open_url:%discord-link%>discussion!</click>'
+      - ''
+      - ''
+      - '<click:open_url:%discord-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+  rules:
+    pages: 1
+    0:
+      - '<click:open_url:%rules-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%rules-link%>          <bold>Rules</bold></click>'
+      - ''
+      - 'Failure to follow the'
+      - 'rules could result in'
+      - 'permanent ban.'
+      - ''
+      - 'Please visit our'
+      - 'website to read our'
+      - 'rules.'
+      - ''
+      - '<click:open_url:%rules-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'

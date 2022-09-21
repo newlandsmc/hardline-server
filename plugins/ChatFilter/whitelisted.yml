@@ -1,0 +1,8 @@
+#List of words that you wish to whitelist
+bypassWords: []
+
+#List of ip/websites you wish to whitelist
+bypassIP:
+  - semivanilla.com
+  - discord.com
+  - discord.gg

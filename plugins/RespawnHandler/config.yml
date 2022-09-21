@@ -1,0 +1,37 @@
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=  Corpse  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+corpse-limit: 5 # each player can only have 3 corpses at a time
+corpse-grace-period: 1 # in minutes, the amount of time the corpse is accessible to only the dead player
+corpse-decay-time: 2880 # in minutes
+
+soulbound-cost: 500 # cost to soulbind an item
+
+# supports player placeholders for the clicker (playerName) etc.., (corpseName) for the name of the dead player
+# you can also use (graceTimeLeft|HH:mm:ss) to display what time is left of the grace period
+# you can replace HH:mm:ss with a different time format
+corpse-grace-message: "<red>Only (corpseName) can open this corpse for (graceTimeLeft|HH:mm:ss)."
+#corpse-pickupsouls-message: "<green>Found (corpseSouls) souls on (corpseName)'s corpse."
+#corpse-nosouls-message: "<red>No souls were found on this corpse."
+corpse-pickupsouls-message: ""
+corpse-nosouls-message: ""
+corpse-name: "(corpseName)'s corpse" # name in gui
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=  Damage  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+damage-debuff-percentage: 10
+damage-debuff-max-stack: 5 # max amount of times the player can stack their damage debuff
+damage-debuff-message: "<red>You have blood on your hands. You do (x)% less damage for (y) minutes."
+damage-debuff-durations: # in minutues
+  - 5
+  - 10
+  - 15
+  - 30
+  - 60
+  - 120
+  - 180
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=  Items  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+round-up: true # true to round up, false to round down
+
+items:
+  GOLD_INGOT:
+    min: 0 # Percentage is in whole numbers, so 50 is 50% of items taken. In this case if you have 10 golden ingots, it'll take from 5 to 10 of them from you.
+    max: 0

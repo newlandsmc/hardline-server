@@ -1,0 +1,22 @@
+patterns:
+  - type: stat
+    stat: toughness
+    value: 1
+    pattern:
+      start: 2
+      interval: 1
+  - type: stat
+    stat: health
+    value: 1
+    pattern:
+      start: 2
+      interval: 2
+  - type: command
+    executor: console
+    command: 'null'
+    menu_message: \n\n&eDifficulty\n  &7+1% hostile mob health
+    chat_message: \n  &eDifficulty&7 - +1% hostile mob health
+    pattern:
+      start: 1
+      interval: 1
+levels:

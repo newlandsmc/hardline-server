@@ -1,0 +1,66 @@
+animations:
+#  tablist:
+#    # Text changing interval in milliseconds (ticks).
+#    interval: 60
+#
+#    # Display the text randomly?
+#    random: true
+#
+#    # The list of texts that will appear
+#    texts:
+#    - "&b&lTabList"
+#    - "&6&lTabList"
+#    - "&6&lTabList"
+#    - "&9&lTabList"
+#    - "&a&lTabList"
+#    - "&e&lTabList"
+#    - "&5&lTabList"
+#    - "&b&lTabList"
+#    - "&6&lTabList"
+#    - "&6&lTabList"
+#    - "&9&lTabList"
+#    - "&a&lTabList"
+#    - "&e&lTabList"
+#    - "&5&lTabList"
+#    - "&b&lTabList"
+#    - "&6&lTabList"
+#    - "&6&lTabList"
+#    - "&9&lTabList"
+#    - "&a&lTabList"
+#    - "&e&lTabList"
+#    - "&5&lTabList"
+#    - "&b&lTabList"
+
+  title:
+    interval: 120
+    texts:
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &eSemi&6Vanilla \n &7Khavalon "
+    - " &fS&eemi&6Vanilla \n &7Khavalon "
+    - " &fSe&emi&6Vanilla \n &fK&7havalon "
+    - " &fSem&ei&6Vanilla \n &fKh&7avalon "
+    - " &eS&femi&6Vanilla \n &fKha&7valon "
+    - " &eSe&fmiV&6anilla \n &7K&fhav&7alon "
+    - " &eSem&fiVa&6nilla \n &7Kh&fava&7lon "
+    - " &eSemi&fVan&6illa \n &7Kha&fval&7on "
+    - " &eSemi&6V&fani&6lla \n &7Khav&falo&7n "
+    - " &eSemi&6Va&fnil&6la \n &7Khava&flon "
+    - " &eSemi&6Van&fill&6a \n &7Khaval&fon "
+    - " &eSemi&6Vani&flla \n &7Khavalo&fn "
+    - " &eSemi&6Vanil&fla \n &7Khavalon "
+    - " &eSemi&6Vanill&fa \n &7Khavalon "

@@ -1,0 +1,116 @@
+# Here you can find a list of valid entity types.
+# It updates automatically.
+
+valid-living-entity-types:
+- allay
+- axolotl
+- bat
+- bee
+- blaze
+- cat
+- cave spider
+- chicken
+- cod
+- cow
+- creeper
+- dolphin
+- donkey
+- drowned
+- elder guardian
+- enderman
+- endermite
+- ender dragon
+- evoker
+- fox
+- frog
+- ghast
+- giant
+- glow squid
+- goat
+- guardian
+- hoglin
+- horse
+- husk
+- illusioner
+- iron golem
+- llama
+- magma cube
+- mule
+- mushroom cow
+- ocelot
+- panda
+- parrot
+- phantom
+- pig
+- piglin
+- piglin brute
+- pillager
+- polar bear
+- pufferfish
+- rabbit
+- ravager
+- salmon
+- sheep
+- shulker
+- silverfish
+- skeleton
+- skeleton horse
+- slime
+- snowman
+- spider
+- squid
+- stray
+- strider
+- tadpole
+- trader llama
+- tropical fish
+- turtle
+- vex
+- villager
+- vindicator
+- wandering trader
+- warden
+- witch
+- wither
+- wither skeleton
+- wolf
+- zoglin
+- zombie
+- zombie horse
+- zombie villager
+- zombified piglin
+valid-other-entity-types:
+- area effect cloud
+- armor stand
+- arrow
+- boat
+- dragon fireball
+- dropped item
+- egg
+- ender crystal
+- ender pearl
+- ender signal
+- experience orb
+- falling block
+- fireball
+- firework
+- item frame
+- leash hitch
+- llama spit
+- minecart
+- minecart chest
+- minecart command
+- minecart furnace
+- minecart hopper
+- minecart mob spawner
+- minecart tnt
+- painting
+- primed tnt
+- shulker bullet
+- small fireball
+- snowball
+- spectral arrow
+- splash potion
+- thrown exp bottle
+- trident
+- wither skull

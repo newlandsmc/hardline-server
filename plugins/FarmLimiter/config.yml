@@ -1,0 +1,46 @@
+# Plugin created by filoghost. All rights reserved.
+# Redistribution of this product is forbidden.
+# 
+# Online documentation: https://filoghost.me/docs/farm-limiter
+
+# How often to check mob farms in seconds.
+check-interval: 180
+
+broadcast:
+  enable: true
+  message: '&6[FarmLimiter]&e Removed {amount} entities.'
+  # How many entities should be removed at minimum to broadcast the message.
+  minimum: 1
+  # Enable to require the permission "farmlimiter.receive-broadcast" to see the message.
+  require-permission: false
+
+rules:
+# A global rule active on all the worlds, for groups of 50+ entities.
+- entities: all
+  exclude: villager
+  worlds: all
+  distance: 3
+  max-amount: 50
+# A rule to avoid friendly mob farms, limit the mobs amount to 25.
+- entities: pig, cow, sheep, chicken
+  worlds: all
+  distance: 5
+  max-amount: 25
+# A rule for spawner grinders, max of 10 mobs of the same type in the same block.
+- entities: zombie, skeleton, spider, cave spider
+  worlds: all
+  distance: 1
+  max-amount: 10
+
+group-separately:
+  # Set to true to group MythicMobs separately as different entity types.
+  mythic-mobs: false
+
+extra:
+  # The rate of mobs that will successfully spawn from a nether portal.
+  # Setting to 0% disables mobs spawning from portals.
+  portal-spawn-rate: '100%'
+  # Whether to exclude tamed entities or not
+  exclude-tamed: true
+  # Whether to exclude entities with a name tag or not
+  exclude-nametagged: false

@@ -1,0 +1,61 @@
+# The amount of time used for the interval
+interval: 60
+# The unit of time used for the interval
+#  Can be SECONDS, MINUTES, or HOURS
+interval-time-unit: 'MINUTES'
+random-message-order: true
+gradient:
+  color-1: 'gold'
+  color-2: 'red'
+  color-3: 'gold'
+  speed: 0.1
+returning-player:
+  title-settings:
+    enabled: true
+    duration-seconds: 4
+    fade-in: 1000
+    fade-out: 1000
+    title: '<gradient:red:dark_red>Hardline</gradient>'
+    subtitle: '<gray>Survival</gray>'
+    bedrock:
+      enable: true
+      duration-seconds: 4
+      fade-in: 1000
+      fade-out: 1000
+      title: '<red>Hardline</red>'
+      subtitle: '<gray>Survival</gray>'
+  join-sounds:
+    enabled: false
+    name: 'ui.toast.challenge_complete'
+    pitch: 1
+    source: master
+    volume: 0.8
+new-player:
+  title-settings:
+    enabled: true
+    duration-seconds: 4
+    fade-in: 1000
+    fade-out: 1000
+    title: '<gradient:red:dark_red>Hardline</gradient>'
+    subtitle: '<gray>Survival</gray>'
+    bedrock:
+      enable: true
+      duration-seconds: 4
+      fade-in: 1000
+      fade-out: 1000
+      title: '<red>Hardline</red>'
+      subtitle: '<gray>Survival</gray>'
+  join-sounds:
+    enabled: false
+    name: 'UI_TOAST_CHALLENGE_COMPLETE'
+    pitch: 1
+    source: master
+    volume: 0.8
+messages:
+  11:
+    - '<strikethrough>                                                                 <reset>'
+    - ''
+    - 'Mana and hearts GUI getting in your way?'
+    - 'You can disable it with <gradient:red:dark_red>/abtoggle</gradient>.'
+    - ''
+    - '<strikethrough>                                                                 <reset>'
