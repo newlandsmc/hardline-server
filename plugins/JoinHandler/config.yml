@@ -1,4 +1,4 @@
-first-join: "<gray> * (playerName) joined the server."
+first-join: "<green> * (playerName) joined the server."
 
 first-join-dialogue:
   1:
@@ -23,8 +23,8 @@ revert-spawn-structure: false
 enable-dialogue: false
 
 # Message that will be sent on evey subsequent join
-welcome-back: "<gray> * (playerName) joined the server."
-leave-message: "<gray> * (playerName) left the server."
+welcome-back: "<green> * (playerName) joined the server."
+leave-message: "<red> * (playerName) left the server."
 
 # Ignores the first join limitations
 debug-spawn: false

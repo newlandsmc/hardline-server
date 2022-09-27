@@ -1,0 +1,42 @@
+{
+  "uuid": "244a663c-bc0a-465e-8697-0c00ca7c5906",
+  "name": "sudokou",
+  "totalVotes": 0,
+  "offlineEarned": 0,
+  "votesToday": 0,
+  "crates": [
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM",
+    "PREMIUM"
+  ],
+  "unclaimedRewards": [],
+  "lastVotes": [],
+  "lastDailyClaim": {
+    "year": 2022,
+    "month": 9,
+    "day": 26
+  },
+  "lastDayUpdated": {
+    "year": 2022,
+    "month": 9,
+    "day": 26
+  }
+}

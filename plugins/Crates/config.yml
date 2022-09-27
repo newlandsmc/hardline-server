@@ -1,0 +1,90 @@
+loot: # specifies what files to pull the loot tables from (in loot folder)
+  daily:
+    files:
+      - 'daily.json'
+  premium:
+    files:
+      - 'premium.json'
+  vote:
+    files:
+      - 'vote.json'
+services:
+  - "Minecraft.Buzz"
+  - "Top Minecraft Servers"
+  - "Minelist.net"
+  - "Minecraft-Server.net"
+  - "ServerList101"
+  - "Minecraft-MP.com"
+free-premium-crate: true
+menu:
+  enable-animation: true # enables the 'animation' in the men
+  khavalon: true
+  update-ticks: 2 # Speed at which the menu should update at
+  sounds: # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html for list of sounds
+    center:
+      volume: 1
+      pitch: 1
+      sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    reveal: # When all items finished revealing or claim all button is clicked
+      volume: 1
+      pitch: 1
+      sound: ENTITY_PLAYER_LEVELUP
+  claim-lore: #lore added when claiming items
+    - '<green>Click to claim this item!'
+  unclaimed-items:
+    - '<green>You still have unclaimed items!'
+    - '<gray>Click to claim them!'
+  items:
+    daily:
+      name: '<green>Daily Crates'
+      material: 'BARREL'
+      can-use:
+        lore:
+          - '<green>You have a Daily crate to claim!'
+          - ''
+          - '<dark_gray>Click to claim.'
+      cant-use:
+        lore:
+          - '<red>You have already opened'
+          - '<red>the daily crate today!'
+    premium:
+      name: '<green>Premium Crates'
+      material: 'ENDER_CHEST'
+      can-use:
+        lore:
+          - '<green>You have {count} crates to claim!'
+          - ''
+          - '<dark_gray>Click to claim.'
+      cant-use:
+        lore:
+          - '<red>You don''t have any premium crates!'
+          - '<red>Buy more at <gradient:yellow:red>hardlinsmp.tebex.io</gradient>'
+          - ''
+          - '<gray>Free Premium Crate:'
+          - '<gray>{days}/{max_days} days of voting completed.'
+    vote:
+      name: '<green>Vote'
+      material: 'CHEST'
+      can-use:
+        lore:
+          - '<green>You have {count} crates to claim!'
+          - ''
+          - '<dark_gray>Click to claim.'
+      cant-use:
+        lore:
+          - '<red>You don''t have any vote crates!'
+          - '<red>Do <gradient:yellow:red>/vote</gradient> to get more!'
+messages:
+  crates-left:
+    - '<yellow>You still have {count} crates to claim! use <gradient:yellow:red>/crates</gradient> to claim them!</yellow>'
+  crates-earned-offline:
+    - '<yellow>You received {count} Crate(s) while away! Use <gradient:yellow:red>/crates</gradient> to claim them!</yellow>'
+  crates-gained:
+    - '<yellow>You received {count} {type} Crate(s)! Use <gradient:yellow:red>/crates</gradient> to claim them!</yellow>'
+  vote:
+    - '<yellow>Thanks for voting! You received a Vote Crate!'
+  inventory-full:
+    - '<red>Your inventory is full!'
+vote-processor:
+  async: true
+  interval: 5

@@ -26,14 +26,14 @@ language: 'en'
 
 # For when an RTP action is denied such as trying to rtp in a world that does not allow rtp.
 #   {0} - The reason the action was denied.
-not-permitted-generic: 'Unknown command. Type "/help" for help.'
+not-permitted-generic: '&cUnknown or incomplete command, see below for error <--&o[HERE]'
 # For when an RTP action is denied because an issue occurred. Ex: an exception occurs while waiting for an rtp location.
 #   {0} - The message from the exception that caused this message to appear.
 #   Note: This is always followed in console by a stack trace (which can not be configured)
 not-permitted-major-error: '&cError. Could not RTP for reason: {0} \n&cPlease check console for more info on why teleportation failed.'
 # For when the reason an action is denied is that rtp is not enabled in the world.
 #   {0} - An identifier that helps with debugging
-not-enabled-in-this-world: 'Unknown command. Type "/help" for help.'
+not-enabled-in-this-world: '&cUnknown or incomplete command, see below for error <--&o[HERE]'
 # For no rtpSettings are found with a given name
 #   {0} - The given name
 no-settings-found-with-name: '&cNo RTP settings found with name {0}'

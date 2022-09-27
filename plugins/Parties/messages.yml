@@ -20,14 +20,14 @@ parties:
   configuration-outdated: "&cThe configuration file '%config%' of Parties is outdated!"
 
   common-messages:
-    invalid-command: "&cInvalid command"
+    invalid-command: "&cUnknown or incomplete command, see below for error <--&o[HERE]"
     configuration-reloaded: "&aConfiguration reloaded"
-    not-in-party: "&cYou are not in a party"
+    not-in-party: "&cYou are not in a party."
     already-in-party: "&cYou are already in a party!"
     party-not-found: "&cThe party %party% doesn't exist"
     party-full: "&cThe party is full!"
     player-not-found: "&cThe player %player% has not been found"
-    player-not-in-party: "&c%player% is not in a party"
+    player-not-in-party: "&c%player% is not in a party."
 
   options:
     enabled: '&aEnabled'
@@ -71,19 +71,19 @@ parties:
   out-party: "Out party"
 
   list:
-    player-online-format: "&b%player%"
+    player-online-format: "&a%player%"
     player-offline-format: "&7%player%"
     player-separator: "&7, "
     player-empty: "&7Nobody"
     player-unknown: "&6Someone"
-    missing-value: "&7Miss"
+    missing-value: "&7Null"
 
   # Define the format of Parties chat messages
   formats:
-    party-chat: "&b[Party] %player_rank_chat% %player%&r&7: &b%message%"
+    party-chat: "&b[Party] %player%&b: &b%message%"
     spy:
-      party-chat: "&7[SPY] [%party%] %player%: %message%"
-      broadcast: "&7[SPY] [%party%]: %message%"
+      party-chat: "&8[%party%] %player%: %message%"
+      broadcast: "&8[%party%]: %message%"
 
 
 
@@ -99,11 +99,11 @@ main-commands:
     multiple-requests-player: '[{"text":"%player%","color":"aqua"},{"text":" - Click here to accept","color":"gray","clickEvent":{"action":"run_command","value":"/%run_command% %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Accept the request","color":"gold"}]}}}]'
 
   chat:
-    enabled: "&aChat set to party"
-    disabled: "&aChat set to public"
+    enabled: "&bParty chat enabled"
+    disabled: "&bParty chat disabled"
 
   create:
-    created: '[{"text":"You have created the party %party%.\n","color":"aqua","bold":false},{"text":"Type ","color":"aqua","bold":false},{"text":"/party invite","color":"gray","clickEvent":{"action":"suggest_command","value":"/party invite "}},{"text":" to invite your friend.","color":"aqua"}]'
+    created: '[{"text":"You have created the party %party%.\n","color":"aqua","bold":false},{"text":"Type ","color":"aqua","bold":false},{"text":"/party invite","color":"gray","clickEvent":{"action":"suggest_command","value":"/alliance invite "}},{"text":" to invite your friend.","color":"aqua"}]'
     created-fixed: "&bYou have created the fixed party %party%"
     name-already-exists: "&cThe party name %party% already exists, choose a different name"
     name-too-long: "&cThe party name is too long!"
@@ -134,24 +134,24 @@ main-commands:
 
   info:
     content:
-    - "&b============ %party%'s Info &r&b============"
+    - "&b&m                    &r %party%'s Info &r&b&m                    &r"
     - "&bDescription&7: %desc%"
     - "&bLeader&7: %list_rank_leader%"
-    - "&bMods&7: %list_rank_moderator%"
+    - "&bTrusted&7: %list_rank_trusted%"
     - "&bMembers&7: %list_rank_member%"
     - "&bOnline players&7: %members_online_total%"
 
   invite:
-    sent: "&bYou invited %player% in your party"
-    player-invited: '[{"text":"&b%player% has invited you to the party %party%.\n&bDo you want "},{"text":"&aaccept","clickEvent":{"action":"run_command","value":"/party accept %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Accept the invitation"}]}}},{"text":" &bor "},{"text":"&cdeny","clickEvent":{"action":"run_command","value":"/party deny %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Deny the invitation"}]}}},{"text":"&b?\n&bYou can use &7/party <accept/deny> &bto choose."}]'
+    sent: "&eYou invited %player% to your party."
+    player-invited: '[{"text":"&b%player% has invited you to the party %party%.\n&bDo you want "},{"text":"&aaccept","clickEvent":{"action":"run_command","value":"/alliance accept %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Accept the invitation"}]}}},{"text":" &bor "},{"text":"&cdeny","clickEvent":{"action":"run_command","value":"/alliance deny %party%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Deny the invitation"}]}}},{"text":"&b?\n&bYou can use &7/alliance <accept/deny> &bto choose."}]'
     accept:
-      broadcast: "&b%player% joined the party"
-      accepted: "&aYou accepted the party invite"
-      receipt: "&a%player% accepted your invite"
+      broadcast: "&b%player% joined the party!"
+      accepted: "&eYou accepted the party invite"
+      receipt: "&e%player% accepted your invite"
     deny:
       broadcast: ""
-      denied: "&aYou denied the party invite"
-      receipt: "&a%player% denied your invite"
+      denied: "&eYou denied the party invite"
+      receipt: "&e%player% denied your invite"
     timeout:
       no-response: "&7%player% didn't accept the party invite"
       timeout: "&7You didn't accept the party invite to %party%"
@@ -241,8 +241,8 @@ main-commands:
     cooldown: "&cYou have to wait %seconds% seconds!"
 
   spy:
-    enabled: "&7Now you are a spy!"
-    disabled: "&7You are no longer a spy"
+    enabled: "&7Now you are are spying party chat"
+    disabled: "&7You are no longer spying party chat"
 
   version:
     # [Special tags]
@@ -259,7 +259,7 @@ main-commands:
 additional-commands:
   ask:
     sent: "&aJoin request sent to %party%"
-    received: '[{"text":"&b%player% want to join your party.\n&bDo you want "},{"text":"&aaccept","clickEvent":{"action":"run_command","value":"/party accept %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Accept the request"}]}}},{"text":" &bor "},{"text":"&cdeny","clickEvent":{"action":"run_command","value":"/party deny %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Deny the invitation","color":"gold"}]}}},{"text":"&b?\n&bYou can use &7/party <accept/deny> %player% &bto choose."}]'
+    received: '[{"text":"&b%player% want to join your party.\n&bDo you want "},{"text":"&aaccept","clickEvent":{"action":"run_command","value":"/alliance accept %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Accept the request"}]}}},{"text":" &bor "},{"text":"&cdeny","clickEvent":{"action":"run_command","value":"/alliance deny %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Deny the invitation","color":"gold"}]}}},{"text":"&b?\n&bYou can use &7/alliance <accept/deny> %player% &bto choose."}]'
     accept:
       broadcast: "&b%player% joined the party"
       accepted: "&aYou accepted the ask request"
@@ -364,10 +364,10 @@ additional-commands:
     toggle-off: "&aYour party members will not follow your leader anymore"
 
   home:
-    teleported: "&7Teleported to the party home."
+    teleported: "&eTeleported to the party home."
     # [Special tags]
     # => %seconds%          = Time of delay in seconds
-    teleport-in: "&7You will be teleported in %seconds% seconds..."
+    teleport-in: "&eYou will be teleported in %seconds% seconds..."
     teleport-denied: "&cTeleport cancelled!"
     teleport-waiting: "&cYou are already waiting for the teleport!"
     no-home: "&cThere isn't a home yet"
@@ -473,18 +473,18 @@ additional-commands:
     already-used: "&c The tag %tag% is already used"
 
   teleport:
-    teleporting: "&7Teleporting your party here!"
-    player-teleported: "&bTeleported to %player%"
+    teleporting: "&eTeleporting your party here!"
+    player-teleported: "&eTeleported to %player%"
     # [Special tags]
     # => %seconds%          = Time of delay in seconds
-    player-teleport-in: "&7You will be teleported in %seconds% seconds"
-    player-teleport-denied: "&7Teleport denied"
+    player-teleport-in: "&eYou will be teleported in %seconds% seconds..."
+    player-teleport-denied: "&cTeleport denied"
     # [Special tags]
     # => %seconds%          = Remaining time in seconds
     cooldown: "&cYou have to wait %seconds% seconds!"
     accept-request:
       sent: "&aTeleport request sent to the party"
-      received: '[{"text":"&bDo you want to be teleported to %player%? "},{"text":"&aYes","clickEvent":{"action":"run_command","value":"/party accept %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Accept the request"}]}}},{"text":" &bor "},{"text":"&cno","clickEvent":{"action":"run_command","value":"/party deny %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Deny the invitation","color":"gold"}]}}},{"text":"&b?\n&bYou can use &7/party <accept/deny> %player% &bto choose."}]'
+      received: '[{"text":"&bDo you want to be teleported to %player%? "},{"text":"&aYes","clickEvent":{"action":"run_command","value":"/party accept %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Accept the request"}]}}},{"text":" &bor "},{"text":"&cno","clickEvent":{"action":"run_command","value":"/alliance deny %player%"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Deny the invitation","color":"gold"}]}}},{"text":"&b?\n&bYou can use &7/alliance <accept/deny> %player% &bto choose."}]'
       denied: "&7You denied the teleport request of %player%"
 
   vault:
@@ -508,7 +508,7 @@ additional-commands:
       tag: "&cYou don't have enough money to set the tag [%price%$]"
       teleport: "&cYou don't have enough money to perform a teleport [%price%$]"
     confirm:
-        warn-onbuy: '[{"text":"&aCommand %cmd% costs %price%$.\n"},{"text":"&2Click here to confirm","clickEvent":{"action":"run_command","value":"/party confirm"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Pay the command"}]}}},{"text":" &aor type &7/party confirm &ato use it"}]'
+        warn-onbuy: '[{"text":"&aCommand %cmd% costs %price%$.\n"},{"text":"&2Click here to confirm","clickEvent":{"action":"run_command","value":"/party confirm"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"&6Pay the command"}]}}},{"text":" &aor type &7/alliance confirm &ato use it"}]'
         confirmed: "&aPerforming the command."
         no-cmd: "&cThere is no command to confirm"
 

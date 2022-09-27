@@ -137,20 +137,22 @@ ranks:
       - party.claim
       - party.teleport.accept
       - party.teleport.deny
-  moderator:
+  trusted:
     level: 10
-    name: "Moderator"
-    chat: "&cModerator"
+    name: "Trusted"
+    chat: "&eTrusted"
     inheritence: member
     permissions:
       - party.ask.accept
       - party.ask.deny
       - party.invite
       - party.kick
+      - party.edit.protection
+      - party.edit.home
   leader:
     level: 20
     name: "Leader"
-    chat: "&4&lLeader"
+    chat: "&cLeader"
     permissions:
       - '*'
 
@@ -238,9 +240,9 @@ additional:
   # 'prevent-fish-hook' works only in 1.15+
   # 'prevent-damage-with-magic' prevents friendly fire damage of Magic plugin
   friendly-fire:
-    enable: false
+    enable: true
     type: global
-    warn-players-on-fight: true
+    warn-players-on-fight: false
     prevent-fish-hook: false
     prevent-damage-with-magic: false
 
@@ -257,7 +259,7 @@ additional:
     # Set the maximum number of homes
     max-homes: 1
     cancel:
-      hit: true
+      hit: false
       moving: true
       # Minimum walk distance before teleport deny
       distance: 3

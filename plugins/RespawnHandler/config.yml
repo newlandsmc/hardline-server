@@ -16,17 +16,10 @@ corpse-nosouls-message: ""
 corpse-name: "(corpseName)'s corpse" # name in gui
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=  Damage  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+damage-debuff-duration: 5
 damage-debuff-percentage: 10
 damage-debuff-max-stack: 5 # max amount of times the player can stack their damage debuff
-damage-debuff-message: "<red>You have blood on your hands. You do (x)% less damage for (y) minutes."
-damage-debuff-durations: # in minutues
-  - 5
-  - 10
-  - 15
-  - 30
-  - 60
-  - 120
-  - 180
+damage-debuff-message: "<red>You have blood on your hands. You do less damage for 5 minutes."
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=  Items  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
 round-up: true # true to round up, false to round down

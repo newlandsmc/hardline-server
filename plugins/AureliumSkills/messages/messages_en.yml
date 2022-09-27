@@ -322,7 +322,7 @@ acf:
       perform this command.'
     error_generic_logged: '&cAn error occurred. This problem has been logged. Sorry
       for the inconvenience.'
-    unknown_command: '&cUnknown Command, please type &e/sk help'
+    unknown_command: '&cUnknown or incomplete command, see below for error <--&o[HERE]'
     invalid_syntax: '&eUsage: &e{command} &a{syntax}'
     error_prefix: '&cError: {message}'
     error_performing_command: '&cI''m sorry, but there was an error performing this

@@ -77,7 +77,7 @@ then-execute:
   - 'spawncampfire %player%'
   - 'setspawnlocationinternal %player%'
   - 'spawnpoint %player% %x% %y% %z%'
-  - 'ebroadcast &7 * %player% joined the server.'
+  - 'ebroadcast &a * %player% joined the server.'
 
 # This only is used if you have an economy plugin.
 # If you do have an economy plugin and you want to disable this feature, set cost to 0.

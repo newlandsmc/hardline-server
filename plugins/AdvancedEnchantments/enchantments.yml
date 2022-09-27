@@ -80,6 +80,18 @@
 #    disabled-worlds: # List worlds in which enchantment will not work (cAsE sEnSiTiVe)
 #      - "My_World"
 
+timber:
+  display: "%group-color%Timber"
+  description: "Break an entire tree in one hit"
+  applies-to: "Axes"
+  group: "FABLED"
+  type: "MINING"
+  applies:
+    - "ALL_AXE"
+  levels:
+    1:
+      effects:
+        - "BREAK_TREE"
 replanter:
   display: "%group-color%Replanter"
   description: "Replants crops when you break them."

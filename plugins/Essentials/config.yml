@@ -475,8 +475,8 @@ allow-silent-join-quit: false
 # {ONLINE} - The number of players online.
 # {UNIQUE} - The number of unique players to join the server.
 # {UPTIME} - The amount of time the server has been online.
-#custom-join-message: "&7 * {USERNAME} joined the server."
-#custom-quit-message: "&7 * {USERNAME} left the server."
+#custom-join-message: "&a * {USERNAME} joined the server."
+#custom-quit-message: "&c * {USERNAME} left the server."
 custom-join-message: "none"
 custom-leave-message: "none"
 

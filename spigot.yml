@@ -157,7 +157,7 @@ commands:
   send-namespaced: false
 messages:
   whitelist: 'Hardline is under maintenance! Discord: https://semivanilla.com/discord'
-  unknown-command: Unknown command. Type "/help" for help.
+  unknown-command: '&cUnknown or incomplete command, see below for error <--&o[HERE]'
   server-full: Server full!
   outdated-client: Outdated client! Please use {0}
   outdated-server: Outdated server! I'm still on {0}

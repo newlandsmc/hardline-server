@@ -184,7 +184,7 @@ Kill Abuse:
   Time Limit: 60
   Commands on Abuse:
   - 'kick <player> Kill abuse is not allowed.'
-  Respawn Protection: 10
+  Respawn Protection: 15
   Teleport Protection: 0
   WorldGuard Exclusions: []
   Command Cooldown After Death:
@@ -207,7 +207,7 @@ Player Kills:
   Death Effects:
     Lightning: false
   Commands On Kill:
-  - 'ebroadcast &7 * <player> killed <victim>'
+  - 'ebroadcast &6 * <player> killed <victim>'
   WorldGuard Exclusions: []
   Extra Drops: []
 

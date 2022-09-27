@@ -74,7 +74,7 @@ offline_server_acknowledgement: false
 unmuteinterval: 60
 
 # Enables or disabled BungeeCord messaging
-bungeecordmessaging: true
+bungeecordmessaging: false
 
 # Sound for message notification
 # Enter 'None' to disable the sound
@@ -87,11 +87,11 @@ vanishsupport: false
 # Start the placeholder with 'sender_' for the sending players placeholder
 # Start the placeholder with 'receiver_' for the receiving players placeholder
 # The defaults shown below provide an example of each
-tellformatto: '&7&oYou whisper to {receiver_player_name}:'
-tellformatfrom: '&7&o{sender_player_name} whispers to you:'
+tellformatto: '&f[Whisper] You -> {receiver_player_name}:'
+tellformatfrom: '&f[Whisper] {sender_player_name} -> You:'
 tellformatspy: '&8{sender_player_name} -> {receiver_player_name}:'
-replyformatto: '&7&oYou whisper to {receiver_player_name}:'
-replyformatfrom: '&7&o{sender_player_name} whispers to you:'
+replyformatto: '&f[Whisper] You -> {receiver_player_name}:'
+replyformatfrom: '&f[Whisper] {sender_player_name} -> You:'
 replyformatspy: '&8{sender_player_name} -> {receiver_player_name}:'
 
 # {host} : party hosts name
@@ -241,8 +241,8 @@ enable_factions_channel: false
 # If you delete a channel, restart the server! Do not use /chatreload!!!
 channels: 
   Global:
-    color: white
-    chatcolor: white
+    color: gray
+    chatcolor: gray
     mutable: false
     filter: false
     autojoin: true
@@ -254,7 +254,7 @@ channels:
     permissions: None
     speak_permissions: None
     channel_prefix: ''
-    format: '{luckperms_prefix}&7{player_displayname}&f:'
+    format: '{luckperms_prefix}{player_displayname}&7:'
   Staff:
     color: yellow
     chatcolor: yellow
@@ -264,7 +264,7 @@ channels:
     default: false
     distance: 0
     cooldown: 0
-    bungeecord: true
+    bungeecord: false
     alias: s
     permissions: staffchannel
     speak_permissions: None

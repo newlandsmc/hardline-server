@@ -155,7 +155,7 @@ automatic-backups:
   enabled: false
   minimum-interval-hours: 24
 farming:
-  enabled: false
+  enabled: true
   max-level: 97
   check-cancelled: true
   check-multiplier-permissions: true
@@ -170,12 +170,12 @@ mining:
   check-cancelled: true
   check-multiplier-permissions: true
 fishing:
-  enabled: false
+  enabled: true
   max-level: 97
   check-cancelled: true
   check-multiplier-permissions: true
 excavation:
-  enabled: false
+  enabled: true
   max-level: 97
   check-cancelled: true
   check-multiplier-permissions: true
@@ -237,7 +237,7 @@ forging:
   blocked-grindstone-enchants:
   - binding_curse
   - vanishing_curse
-  enabled: false
+  enabled: true
   max-level: 97
   check-cancelled: true
   check-multiplier-permissions: true

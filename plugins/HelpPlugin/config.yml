@@ -1,11 +1,42 @@
 commands:
   - help
+  - discord
+  - website
+  - vote
+  - donate
+  - store
   - info
   - rules
+  - help
 
 menu-name: 'Help Menu'
 
 items:
+  0:
+    material: 'BLACK_STAINED_GLASS_PANE'
+    name: '&0'
+    lore: []
+    commands: []
+  1:
+    material: 'EMERALD'
+    name: '&aStore'
+    lore:
+      - '&fDonate to support the server.'
+      - '&fHelp us pay the bills.'
+      - ''
+      - '&8Click to get link.'
+    commands:
+      - 'info store'
+  2:
+    material: 'NETHER_STAR'
+    name: '&bVote'
+    lore:
+      - '&fVote to support the server.'
+      - '&fGet rewards every day.'
+      - ''
+      - '&8Click to get link.'
+    commands:
+      - 'info vote'
   3:
     material: 'ENCHANTED_BOOK'
     name: '&cHelp'
@@ -16,40 +47,218 @@ items:
       - '&8Click to open book.'
     commands:
       - 'info help'
+  4:
+    material: 'AMETHYST_SHARD'
+    name: '&dDiscord'
+    lore:
+      - '&fJoin the community.'
+      - '&fon Discord.'
+      - ''
+      - '&8Click to get link.'
+    commands:
+      - 'info discord'
+  5:
+    material: 'GLOBE_BANNER_PATTERN'
+    name: '&7Rules'
+    lore:
+      - '&fRead the rules before'
+      - '&fyou play.'
+      - ''
+      - '&8Click to get link.'
+    commands:
+      - 'info rules'
+  6:
+    material: 'BLACK_STAINED_GLASS_PANE'
+    name: '&o'
+    lore: []
+    commands: []
 links:
-  store: 'https://store.semivanilla.com'
-  map: 'https://semivanilla.com/features/map'
-  vote: 'https://semivanilla.com/vote'
-  website: 'https://semivanilla.com'
+  store: 'https://hardlinesmp.tebex.io'
+  map: 'https://hardlinesmp.com/features/map'
+  vote: 'https://hardlinesmp.com/vote'
+  website: 'https://hardlinesmp.com'
   discord: 'https://discord.gg/3WzZ3x6wGp'
-  rules: 'https://semivanilla.com/rules'
+  rules: 'https://hardlinesmp.com/rules'
 
 book:
   help:
-    pages: 21
+    pages: 16
     0:
-      - 'To be written.'
+      - '    <gradient:red:dark_red><bold>Hardline SMP</bold></gradient>'
+      - '          <bold>Help</bold>'
       - ''
-      - ' - Mention /l'
+      - 'Pages:'
+      - '<color:#fb9b19> 5</color> - Skills & Abilities'
+      - '<color:#ee7e30> 8</color> - Custom Enchants'
+      - '<color:#ee7e30>11</color> - Messaging'
+      - '<color:#e57137>13</color> - Teleporting'
+      - '<color:#ce5a42>15</color> - Vanilla+'
+      - '<color:#c05045>18</color> - Other'
+      - '<color:#b24747>20</color> - More Help'
+    1:
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - '      <color:#fb9b19><bold>Section II</bold></color>'
+      - '  <bold>Skills & Abilities</bold>'
+    2:
+      - '  <bold>Skills & Abilities</bold>'
+      - ''
+      - 'There are 13 skills'
+      - 'you level up as you'
+      - 'play.'
+      - ''
+      - 'Each skill grants you'
+      - 'passive abilities in'
+      - 'that skill.'
+      - ''
+      - 'There are also 6'
+      - 'stats that buff you as'
+      - 'you level up.'
+    3:
+      - '<bold>Commands:</bold>'
+      - ' - /skills'
+      - ' - /stats'
+      - ' - /<skillname>'
+    4:
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - '      <color:#ee7e30><bold>Section III</bold></color>'
+      - '  <bold>Custom Enchants</bold>'
+    5:
+      - '  <bold>Custom Enchants</bold>'
+      - ''
+      - 'There are 54 unique'
+      - 'custom enchants you'
+      - 'can put on your'
+      - 'weapons, armor, and'
+      - 'tools.'
+      - ''
+      - 'A single item can have'
+      - 'up to 4 custom'
+      - 'enchantments.'
+    6:
+      - 'Custom enchants can'
+      - 'only be found in'
+      - 'natural loot chests'
+      - 'or crate drops.'
+    7:
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - '       <color:#ee7e30><bold>Section IV</bold></color>'
+      - '       <bold>Messaging</bold>'
+    8:
+      - '       <bold>Messaging</bold>'
+      - ''
+      - 'You can private'
+      - 'message other'
+      - 'players using the'
+      - 'commands below.'
+      - ''
+      - '<bold>Commands:</bold>'
+      - '- /whisper'
+      - '- /reply'
+      - '- /party chat'
+    9:
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - '      <color:#e57137><bold>Section V</bold></color>'
+      - '     <bold>Teleporting</bold>'
+    10:
+      - '     <bold>Teleporting</bold>'
+      - ''
+      - 'You can teleport to'
+      - 'your party''s home'
+      - 'using the command'
+      - 'below.'
+      - ''
+      - '<bold>Commands:</bold>'
+      - '- /party home'
+    11:
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - '     <color:#ce5a42><bold>Section VI</bold></color>'
+      - '       <bold>Vanilla+</bold>'
+    12:
+      - '       <bold>Vanilla+</bold>'
+      - ''
+      - 'Many vanilla features'
+      - 'have been optimized'
+      - 'for a multiplayer'
+      - 'experience.'
+      - ''
+      - 'Custom Recipes:'
+      - ''
+      - 'Many custom recipes'
+      - 'have been added,'
+      - 'published on our'
+      - 'website.'
+    13:
+      - 'Custom Loot Tables:'
+      - ''
+      - 'Loot found in loot'
+      - 'chests have been'
+      - 'heavily modified.'
+      - ''
+      - 'Random Spawn:'
+      - ''
+      - 'There is no spawn.'
+      - 'Every player spawns'
+      - 'somewhere unique in'
+      - 'the survival world.'
+    14:
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - '     <color:#b24747><bold>Section VIII</bold></color>'
+      - '       <bold>More Help</bold>'
+    15:
+      - '       <bold>More Help</bold>'
+      - ''
+      - 'Need more help?'
+      - 'Join our Discord!'
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - ''
+      - '<click:open_url:%discord-link%>   <gradient:red:dark_red><bold>CLICK TO OPEN</bold></gradient></click>'
   store:
     pages: 1
     0:
-      - '<click:open_url:%store-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%store-link%>    <gradient:red:dark_red><bold>Hardline SMP</bold></gradient></click>'
       - '<click:open_url:%store-link%>         <bold>Store</bold></click>'
       - ''
-      - '<click:open_url:%store-link%>Help us share the</click>'
-      - '<click:open_url:%store-link%>adventure for years</click>'
-      - '<click:open_url:%store-link%>to come!</click>'
+      - '<click:open_url:%store-link%>Help us keep the</click>'
+      - '<click:open_url:%store-link%>lights on. Get</click>'
+      - '<click:open_url:%store-link%>rewarded for it, too.</click>'
       - ''
       - '<click:open_url:%store-link%>Donate to support the</click>'
-      - '<click:open_url:%store-link%>server. Thank you!</click>'
+      - '<click:open_url:%store-link%>server below.</click>'
       - ''
       - ''
-      - '<click:open_url:%store-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+      - '<click:open_url:%store-link%>   <gradient:red:dark_red><bold>CLICK TO OPEN</bold></gradient></click>'
   map:
     pages: 1
     0:
-      - '<click:open_url:%map-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%map-link%>    <gradient:red:dark_red><bold>Hardline SMP</bold></gradient></click>'
       - '<click:open_url:%map-link%>           <bold>Map</bold></click>'
       - ''
       - '<click:open_url:%map-link%>View the entire</click>'
@@ -60,26 +269,26 @@ book:
       - '<click:open_url:%map-link%>Shows approximate</click>'
       - '<click:open_url:%map-link%>location.</click>'
       - ''
-      - '<click:open_url:%map-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+      - '<click:open_url:%map-link%>   <gradient:red:dark_red><bold>CLICK TO OPEN</bold></gradient></click>'
   vote:
     pages: 1
     0:
-      - '<click:open_url:%vote-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%vote-link%>    <gradient:red:dark_red><bold>Hardline SMP</bold></gradient></click>'
       - '<click:open_url:%vote-link%>     <bold>Vote Portal</bold></click>'
       - ''
       - '<click:open_url:%vote-link%>Support us by voting</click>'
       - '<click:open_url:%vote-link%>every day and get</click>'
-      - '<click:open_url:%vote-link%>rewarded for it!</click>'
+      - '<click:open_url:%vote-link%>rewarded for it.</click>'
       - ''
-      - '<click:open_url:%vote-link%>/spoils to claim</click>'
+      - '<click:open_url:%vote-link%>/crates to claim</click>'
       - '<click:open_url:%vote-link%>rewards.</click>'
       - ''
       - ''
-      - '<click:open_url:%vote-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+      - '<click:open_url:%vote-link%>   <gradient:red:dark_red><bold>CLICK TO OPEN</bold></gradient></click>'
   website:
     pages: 1
     0:
-      - '<click:open_url:%website-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%website-link%>    <gradient:red:dark_red><bold>Hardline SMP</bold></gradient></click>'
       - '<click:open_url:%website-link%>        <bold>Website</bold></click>'
       - ''
       - '<click:open_url:%website-link%>Bookmark us! Favorite</click>'
@@ -90,26 +299,26 @@ book:
       - '<click:open_url:%website-link%>Discord, and more.</click>'
       - ''
       - ''
-      - '<click:open_url:%website-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+      - '<click:open_url:%website-link%>   <gradient:red:dark_red><bold>CLICK TO OPEN</bold></gradient></click>'
   discord:
     pages: 1
     0:
-      - '<click:open_url:%discord-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%discord-link%>    <gradient:red:dark_red><bold>Hardline SMP</bold></gradient></click>'
       - '<click:open_url:%discord-link%>        <bold>Discord</bold></click>'
       - ''
-      - '<click:open_url:%discord-link%>Join the community!</click>'
+      - '<click:open_url:%discord-link%>Join the community.</click>'
       - ''
       - '<click:open_url:%discord-link%>Discord is the official</click>'
       - '<click:open_url:%discord-link%>place for server</click>'
       - '<click:open_url:%discord-link%>announcements and</click>'
-      - '<click:open_url:%discord-link%>discussion!</click>'
+      - '<click:open_url:%discord-link%>discussion.</click>'
       - ''
       - ''
-      - '<click:open_url:%discord-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+      - '<click:open_url:%discord-link%>   <gradient:red:dark_red><bold>CLICK TO OPEN</bold></gradient></click>'
   rules:
     pages: 1
     0:
-      - '<click:open_url:%rules-link%>    <gradient:gold:#b24747><bold>SemiVanilla MC</bold></gradient></click>'
+      - '<click:open_url:%rules-link%>    <gradient:red:dark_red><bold>Hardline SMP</bold></gradient></click>'
       - '<click:open_url:%rules-link%>          <bold>Rules</bold></click>'
       - ''
       - 'Failure to follow the'
@@ -120,4 +329,4 @@ book:
       - 'website to read our'
       - 'rules.'
       - ''
-      - '<click:open_url:%rules-link%>   <gradient:gold:#b24747><bold>CLICK TO OPEN</bold></gradient></click>'
+      - '<click:open_url:%rules-link%>   <gradient:red:dark_red><bold>CLICK TO OPEN</bold></gradient></click>'
