@@ -1,4 +1,4 @@
-farmable_pool:
+weapons_main:
   rolls:
     min: 2
     max: 5
@@ -19,7 +19,7 @@ farmable_pool:
       min: 1 # stack amount
       max: 1
 
-other_pool:
+weapons_other:
   rolls:
     min: 2
     max: 5

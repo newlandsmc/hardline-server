@@ -1,4 +1,4 @@
-farmable_pool:
+gear_main:
   rolls:
     min: 2
     max: 5
@@ -19,7 +19,7 @@ farmable_pool:
       min: 10 # stack amount
       max: 20
 
-other_pool:
+gear_other:
   rolls:
     min: 2
     max: 5

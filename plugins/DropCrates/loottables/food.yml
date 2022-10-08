@@ -1,4 +1,4 @@
-farmable_pool:
+food_main:
   rolls:
     min: 2
     max: 5
@@ -15,11 +15,11 @@ farmable_pool:
       max: 20
     item3:
       weight: 10
-      item: SEEDS
+      item: WHEAT_SEEDS
       min: 10 # stack amount
       max: 20
 
-other_pool:
+food_other:
   rolls:
     min: 2
     max: 5

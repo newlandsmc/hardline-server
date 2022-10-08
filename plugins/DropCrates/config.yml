@@ -20,7 +20,11 @@ messages:
     - "&7------------------------------"
   crate_dropped_announcement: # Placeholders: {x} - X coord, {y} - Y coord, {z} - Z coord
     - "&7--------------------------------------------"
-    - "&6 Crate has dropped at X: {x} Y: {y} Z: {z}."
+    - "&6 Crate has dropped at {x}, {y}, {z}!"
+    - "&7--------------------------------------------"
+  crate_exists_announcement: # Placeholders: {x} - X coord, {y} - Y coord, {z} - Z coord
+    - "&7--------------------------------------------"
+    - "&6 Calling all crate hunters to {x}, {y}, {z}!"
     - "&7--------------------------------------------"
 
 # The list of schematics to choose from. This will be grabbed from the DropCrates plugin folder (DropCrates/schematics); if not found the WorldEdit folder will be searched.
