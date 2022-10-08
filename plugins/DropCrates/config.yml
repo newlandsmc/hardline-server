@@ -1,0 +1,83 @@
+#
+# DropCrates v1.0.0 by byteful#0001
+#
+
+# How much time will DropCrates wait between crate drops?
+delay:
+  time: 5 # Integers/Longs
+  unit: MINUTES # DAYS, HOURS, MILLISECONDS, MINUTES, or SECONDS
+
+# The RtpProfile to use from JakesRTP.
+rtp_profile: "dropcrate"
+
+# The messages that DropCrates sends/broadcasts. Multiple lines are supported. Hex colors and color codes supported too.
+# Hex colors: &#______
+# Color codes: &_
+messages:
+  fifteen_minute_announcement:
+    - "&7------------------------------"
+    - "&6 15 minutes until crate drop."
+    - "&7------------------------------"
+  crate_dropped_announcement: # Placeholders: {x} - X coord, {y} - Y coord, {z} - Z coord
+    - "&7--------------------------------------------"
+    - "&6 Crate has dropped at X: {x} Y: {y} Z: {z}."
+    - "&7--------------------------------------------"
+
+# The list of schematics to choose from. This will be grabbed from the DropCrates plugin folder (DropCrates/schematics); if not found the WorldEdit folder will be searched.
+# Ex: 'schematic_name.schematic,weight'
+schematics:
+  - "dropcrate1.schem,5"
+  - "dropcrate2.schem,4"
+
+# The enabled loot-tables that DropCrates will randomly select from.
+enabled_loottables:
+  - "food,10"
+  - "gear,5"
+  - "weapons,2"
+
+#
+# To create a loot-table, create a YML config file named exactly what has been set in 'enabled_loottables' omitting the YML file extension.
+# Ex: 'food,10' would have a file named loottables/food.yml in the DropCrates plugin folder (DropCrates/loottables).
+# Example file content:
+#  farmable_pool:
+#    rolls:
+#      min: 2
+#      max: 5
+#    items:
+#      item1:
+#        weight: 1
+#        item: CARROT
+#        min: 10 # stack amount
+#        max: 20
+#      item2:
+#        weight: 5
+#        item: POTATO
+#        min: 10 # stack amount
+#        max: 20
+#      item3:
+#        weight: 10
+#        item: SEEDS
+#        min: 10 # stack amount
+#        max: 20
+#
+#  other_pool:
+#    rolls:
+#      min: 2
+#      max: 5
+#    items:
+#      item1:
+#        weight: 1
+#        item: BEEF
+#        min: 10 # stack amount
+#        max: 20
+#      item2:
+#        weight: 5
+#        item: CAKE
+#        min: 10 # stack amount
+#        max: 20
+#      item3:
+#        weight: 10
+#        item: GOLDEN_CARROT
+#        min: 10 # stack amount
+#        max: 20
+#

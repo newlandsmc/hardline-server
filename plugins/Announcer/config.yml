@@ -12,14 +12,14 @@ gradient:
 returning-player:
   title-settings:
     enabled: true
-    duration-seconds: 4
+    duration-seconds: 3
     fade-in: 1000
     fade-out: 1000
     title: '<gradient:red:dark_red>Hardline</gradient>'
     subtitle: '<gray>Survival</gray>'
     bedrock:
       enable: true
-      duration-seconds: 4
+      duration-seconds: 3
       fade-in: 1000
       fade-out: 1000
       title: '<red>Hardline</red>'
@@ -33,14 +33,14 @@ returning-player:
 new-player:
   title-settings:
     enabled: true
-    duration-seconds: 4
+    duration-seconds: 3
     fade-in: 1000
     fade-out: 1000
     title: '<gradient:red:dark_red>Hardline</gradient>'
     subtitle: '<gray>Survival</gray>'
     bedrock:
       enable: true
-      duration-seconds: 4
+      duration-seconds: 3
       fade-in: 1000
       fade-out: 1000
       title: '<red>Hardline</red>'

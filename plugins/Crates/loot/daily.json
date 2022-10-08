@@ -212,7 +212,7 @@
             },
             {
                "type":"item",
-               "material":"Glass_Bottle",
+               "material":"GLASS_BOTTLE",
                "weight":1,
                "amount":{
                   "min":5,
@@ -275,7 +275,7 @@
             },
             {
                "type":"item",
-               "material":"melon",
+               "material":"MELON",
                "weight":1,
                "amount":{
                   "min":1,
@@ -284,7 +284,7 @@
             },
             {
                "type":"item",
-               "material":"mushroom_stem",
+               "material":"MUSHROOM_STEM",
                "weight":1,
                "amount":{
                   "min":8,
@@ -293,7 +293,7 @@
             },
             {
                "type":"item",
-               "material":"Note_block",
+               "material":"NOTE_BLOCK",
                "weight":1,
                "amount":{
                   "min":3,
@@ -302,7 +302,7 @@
             },
             {
                "type":"item",
-               "material":"ochre_froglight",
+               "material":"OCHRE_FROGLIGHT",
                "weight":1,
                "amount":{
                   "min":8,
@@ -320,7 +320,7 @@
             },
             {
                "type":"item",
-               "material":"pearlescent_froglight",
+               "material":"PEARLESCENT_FROGLIGHT",
                "weight":1,
                "amount":{
                   "min":8,
@@ -356,7 +356,7 @@
             },
             {
                "type":"item",
-               "material":"red_mushroom_block",
+               "material":"RED_MUSHROOM_BLOCK",
                "weight":1,
                "amount":{
                   "min":8,
@@ -365,7 +365,7 @@
             },
             {
                "type":"item",
-               "material":"Saddle",
+               "material":"SADDLE",
                "weight":1,
                "amount":1
             },
@@ -398,7 +398,7 @@
             },
             {
                "type":"item",
-               "material":"Spyglass",
+               "material":"SPYGLASS",
                "weight":1,
                "amount":1
             },
@@ -413,7 +413,7 @@
             },
             {
                "type":"item",
-               "material":"Sugar",
+               "material":"SUGAR",
                "weight":1,
                "amount":{
                   "min":5,
@@ -422,7 +422,7 @@
             },
             {
                "type":"item",
-               "material":"warped_fungus",
+               "material":"WARPED_FUNGUS",
                "weight":1,
                "amount":{
                   "min":8,
@@ -445,7 +445,7 @@
          "entries":[
             {
                "type":"item",
-               "material":"amethyst_block",
+               "material":"AMETHYST_BLOCK",
                "weight":1,
                "amount":{
                   "min":8,
@@ -481,7 +481,7 @@
             },
             {
                "type":"item",
-               "material":"brown_mushroom_block",
+               "material":"BROWN_MUSHROOM_BLOCK",
                "weight":1,
                "amount":{
                   "min":8,
@@ -490,19 +490,19 @@
             },
             {
                "type":"item",
-               "material":"Cake",
+               "material":"CAKE",
                "weight":1,
                "amount":1
             },
             {
                "type":"item",
-               "material":"Cookie",
+               "material":"COOKIE",
                "weight":1,
                "amount":64
             },
             {
                "type":"item",
-               "material":"crimson_fungus",
+               "material":"CRIMSON_FUNGUS",
                "weight":1,
                "amount":{
                   "min":8,
@@ -511,7 +511,7 @@
             },
             {
                "type":"item",
-               "material":"deepslate_copper_ore",
+               "material":"DEEPSLATE_COPPER_ORE",
                "weight":1,
                "amount":{
                   "min":8,
@@ -520,7 +520,7 @@
             },
             {
                "type":"item",
-               "material":"End_Stone",
+               "material":"END_STONE",
                "weight":1,
                "amount":{
                   "min":8,
@@ -535,7 +535,7 @@
             },
             {
                "type":"item",
-               "material":"Glass",
+               "material":"GLASS",
                "weight":1,
                "amount":{
                   "min":16,
@@ -544,7 +544,7 @@
             },
             {
                "type":"item",
-               "material":"glistering_melon_slice",
+               "material":"GLISTERING_MELON_SLICE",
                "weight":1,
                "amount":{
                   "min":5,
@@ -625,16 +625,7 @@
             },
             {
                "type":"item",
-               "material":"magenta_stained_glass",
-               "weight":1,
-               "amount":{
-                  "min":16,
-                  "max":32
-               }
-            },
-            {
-               "type":"item",
-               "material":"melon_slice",
+               "material":"MELON_SLICE",
                "weight":1,
                "amount":{
                   "min":16,
@@ -661,7 +652,7 @@
             },
             {
                "type":"item",
-               "material":"powder_snow_bucket",
+               "material":"POWDER_SNOW_BUCKET",
                "weight":1,
                "amount":1
             },
@@ -691,7 +682,7 @@
             },
             {
                "type":"item",
-               "material":"Pumpkin",
+               "material":"PUMPKIN",
                "weight":1,
                "amount":{
                   "min":8,
@@ -700,7 +691,7 @@
             },
             {
                "type":"item",
-               "material":"purpur_block",
+               "material":"PURPUR_BLOCK",
                "weight":1,
                "amount":{
                   "min":8,
@@ -760,7 +751,7 @@
             },
             {
                "type":"item",
-               "material":"sculk_catalyst",
+               "material":"SCULK_CATALYST",
                "weight":1,
                "amount":{
                   "min":3,
@@ -778,7 +769,7 @@
             },
             {
                "type":"item",
-               "material":"Shield",
+               "material":"SHIELD",
                "weight":1,
                "amount":1
             },
@@ -802,7 +793,7 @@
             },
             {
                "type":"item",
-               "material":"spider_eye",
+               "material":"SPIDER_EYE",
                "weight":1,
                "amount":{
                   "min":5,
@@ -829,7 +820,7 @@
             },
             {
                "type":"item",
-               "material":"verdant_froglight",
+               "material":"VERDANT_FROGLIGHT",
                "weight":1,
                "amount":{
                   "min":8,
@@ -885,7 +876,7 @@
             },
             {
                "type":"item",
-               "material":"Bookshelf",
+               "material":"BOOKSHELF",
                "weight":1,
                "amount":{
                   "min":1,
@@ -894,7 +885,7 @@
             },
             {
                "type":"item",
-               "material":"chorus_flower",
+               "material":"CHORUS_FLOWER",
                "weight":1,
                "amount":{
                   "min":1,
@@ -912,7 +903,7 @@
             },
             {
                "type":"item",
-               "material":"Deepslate_Gold_Ore",
+               "material":"DEEPSLATE_GOLD_ORE",
                "weight":1,
                "amount":{
                   "min":1,
@@ -921,7 +912,7 @@
             },
             {
                "type":"item",
-               "material":"Deepslate_Iron_Ore",
+               "material":"DEEPSLATE_IRON_ORE",
                "weight":1,
                "amount":{
                   "min":1,
@@ -930,7 +921,7 @@
             },
             {
                "type":"item",
-               "material":"Deepslate_Lapis_Ore",
+               "material":"DEEPSLATE_LAPIS_ORE",
                "weight":1,
                "amount":{
                   "min":1,
@@ -939,7 +930,7 @@
             },
             {
                "type":"item",
-               "material":"Deepslate_Redstone_Ore",
+               "material":"DEEPSLATE_REDSTONE_ORE",
                "weight":1,
                "amount":{
                   "min":1,
@@ -957,7 +948,7 @@
             },
             {
                "type":"item",
-               "material":"Echo_Shard",
+               "material":"ECHO_SHARD",
                "weight":1,
                "amount":{
                   "min":1,
@@ -966,7 +957,7 @@
             },
             {
                "type":"item",
-               "material":"Emerald",
+               "material":"EMERALD",
                "weight":1,
                "amount":{
                   "min":1,
@@ -975,7 +966,7 @@
             },
             {
                "type":"item",
-               "material":"End_Rod",
+               "material":"END_ROD",
                "weight":1,
                "amount":{
                   "min":5,
@@ -984,13 +975,13 @@
             },
             {
                "type":"item",
-               "material":"Ender_Chest",
+               "material":"ENDER_CHEST",
                "weight":1,
                "amount":1
             },
             {
                "type":"item",
-               "material":"Firework_rocket",
+               "material":"FIREWORK_ROCKET",
                "weight":1,
                "amount":{
                   "min":16,
@@ -1008,7 +999,7 @@
             },
             {
                "type":"item",
-               "material":"glowstone_dust",
+               "material":"GLOWSTONE_DUST",
                "weight":1,
                "amount":{
                   "min":16,
@@ -1062,22 +1053,13 @@
             },
             {
                "type":"item",
-               "material":"lapis_ore",
-               "weight":1,
-               "amount":{
-                  "min":1,
-                  "max":5
-               }
-            },
-            {
-               "type":"item",
                "material":"LAVA_BUCKET",
                "weight":1,
                "amount":1
             },
             {
                "type":"item",
-               "material":"Lead",
+               "material":"LEAD",
                "weight":1,
                "amount":{
                   "min":2,
@@ -1086,7 +1068,7 @@
             },
             {
                "type":"item",
-               "material":"Mycelium",
+               "material":"MYCELIUM",
                "weight":1,
                "amount":{
                   "min":16,
@@ -1095,7 +1077,7 @@
             },
             {
                "type":"item",
-               "material":"name_tag",
+               "material":"NAME_TAG",
                "weight":1,
                "amount":3
             },
@@ -1134,7 +1116,7 @@
             },
             {
                "type":"item",
-               "material":"Painting",
+               "material":"PAINTING",
                "weight":1,
                "amount":{
                   "min":1,
@@ -1152,18 +1134,9 @@
             },
             {
                "type":"item",
-               "material":"pumpkin_pie",
+               "material":"PUMPKIN_PIE",
                "weight":1,
-               "amount":16
-            },
-            {
-               "type":"item",
-               "material":"redstone_ore",
-               "weight":1,
-               "amount":{
-                  "min":1,
-                  "max":5
-               }
+               "amount":8
             },
             {
                "type":"item",
@@ -1176,7 +1149,7 @@
             },
             {
                "type":"item",
-               "material":"Sculk",
+               "material":"SCULK",
                "weight":1,
                "amount":{
                   "min":8,
@@ -1194,16 +1167,7 @@
             },
             {
                "type":"item",
-               "material":"sea_lantern",
-               "weight":1,
-               "amount":{
-                  "min":8,
-                  "max":16
-               }
-            },
-            {
-               "type":"item",
-               "material":"shulker_box",
+               "material":"SHULKER_BOX",
                "weight":1,
                "amount":1
             },
@@ -1218,13 +1182,13 @@
             },
             {
                "type":"item",
-               "material":"totem_of_undying",
+               "material":"TOTEM_OF_UNDYING",
                "weight":1,
                "amount":1
             },
             {
                "type":"item",
-               "material":"turtle_egg",
+               "material":"TURTLE_EGG",
                "weight":1,
                "amount":{
                   "min":1,

@@ -82,7 +82,7 @@ messages:
   crates-gained:
     - '<yellow>You received {count} {type} Crate(s)! Use <gradient:yellow:red>/crates</gradient> to claim them!</yellow>'
   vote:
-    - '<yellow>Thanks for voting! You received a Vote Crate!'
+    - '<yellow>Thanks for voting! You received a Vote Crate(s)!'
   inventory-full:
     - '<red>Your inventory is full!'
 vote-processor:

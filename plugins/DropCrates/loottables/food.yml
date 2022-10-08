@@ -1,0 +1,41 @@
+farmable_pool:
+  rolls:
+    min: 2
+    max: 5
+  items:
+    item1:
+      weight: 1
+      item: CARROT
+      min: 10 # stack amount
+      max: 20
+    item2:
+      weight: 5
+      item: POTATO
+      min: 10 # stack amount
+      max: 20
+    item3:
+      weight: 10
+      item: SEEDS
+      min: 10 # stack amount
+      max: 20
+
+other_pool:
+  rolls:
+    min: 2
+    max: 5
+  items:
+    item1:
+      weight: 1
+      item: BEEF
+      min: 10 # stack amount
+      max: 20
+    item2:
+      weight: 5
+      item: CAKE
+      min: 10 # stack amount
+      max: 20
+    item3:
+      weight: 10
+      item: GOLDEN_CARROT
+      min: 10 # stack amount
+      max: 20
