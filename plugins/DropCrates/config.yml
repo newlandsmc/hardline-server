@@ -4,8 +4,8 @@
 
 # How much time will DropCrates wait between crate drops?
 delay:
-  time: 5 # Integers/Longs
-  unit: MINUTES # DAYS, HOURS, MILLISECONDS, MINUTES, or SECONDS
+  time: 3 # Integers/Longs
+  unit: HOURS # DAYS, HOURS, MILLISECONDS, MINUTES, or SECONDS
 
 # The RtpProfile to use from JakesRTP.
 rtp_profile: "dropcrate"
@@ -14,18 +14,18 @@ rtp_profile: "dropcrate"
 # Hex colors: &#______
 # Color codes: &_
 messages:
-  fifteen_minute_announcement:
+  pre_drop_announcement: # Placeholders: {minutes} - # of minutes before crate drops
     - "&7------------------------------"
-    - "&6 15 minutes until crate drop."
+    - "&6 {minutes} minutes until crate drop."
     - "&7------------------------------"
   crate_dropped_announcement: # Placeholders: {x} - X coord, {y} - Y coord, {z} - Z coord
-    - "&7--------------------------------------------"
+    - "&7----------------------------------"
     - "&6 Crate has dropped at {x}, {y}, {z}!"
-    - "&7--------------------------------------------"
+    - "&7----------------------------------"
   crate_exists_announcement: # Placeholders: {x} - X coord, {y} - Y coord, {z} - Z coord
-    - "&7--------------------------------------------"
-    - "&6 Calling all crate hunters to {x}, {y}, {z}!"
-    - "&7--------------------------------------------"
+    - "&7----------------------------------"
+    - "&6 The crate at {x}, {y}, {z} hasn't been looted yet!"
+    - "&7----------------------------------"
 
 # The list of schematics to choose from. This will be grabbed from the DropCrates plugin folder (DropCrates/schematics); if not found the WorldEdit folder will be searched.
 # Ex: 'schematic_name.schematic,weight'

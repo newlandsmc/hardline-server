@@ -19,6 +19,7 @@ npc:
       max-fall-distance: 3
     attack-range: 3.0625
     use-new-finder: false
+    maximum-visited-nodes: 768
   default:
     bossbar-view-range: 64
     waypoints:
@@ -108,6 +109,8 @@ npc:
   scoreboard-teams:
     packet-send-ticks: 1
     enable: true
+  defaults:
+    block-breaker-radius: -1
 general:
   authlib:
     profile-url: https://sessionserver.mojang.com/session/minecraft/profile/
