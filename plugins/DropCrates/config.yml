@@ -7,6 +7,9 @@ delay:
   time: 3 # Integers/Longs
   unit: HOURS # DAYS, HOURS, MILLISECONDS, MINUTES, or SECONDS
 
+# Time is sent with pre drop announcement and is the time to wait before crate drops. (minutes)
+crate_drop_delay: 15 # minutes
+
 # The RtpProfile to use from JakesRTP.
 rtp_profile: "dropcrate"
 
