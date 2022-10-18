@@ -7,9 +7,14 @@
   "crates": [],
   "unclaimedRewards": [],
   "lastVotes": [],
+  "lastDailyClaim": {
+    "year": 2022,
+    "month": 10,
+    "day": 16
+  },
   "lastDayUpdated": {
     "year": 2022,
     "month": 10,
-    "day": 8
+    "day": 16
   }
 }
