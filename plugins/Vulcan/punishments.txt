@@ -2108,3 +2108,91 @@ Potion Effects: []
 ---------------------------------------------------------------------------
 
 
+--------------[ Cake_HD was punished for Ground Spoof (Type B) ]--------------
+
+Location:
+ - World: world
+ - X: -1815.3979533324996
+ - Y: 84.5030025527264
+ - Z: -7675.4197171633095
+
+Information:
+ - UUID: bb278a5b-91b9-49b7-93ce-64697b63cdc6
+ - Keep Alive Ping: 29
+ - Transaction Ping: 134
+ - Server TPS: 20
+ - Sensitivity: 99
+ - Gamemode: SURVIVAL
+ - Client Brand: Fabric
+ - Vehicle: null
+ - Version: 1.19.1
+ - Last Damage: 17.65 seconds ago
+
+Total Violations: 5
+ - Combat Violations: 0
+ - Movement Violations: 0
+ - Player Violations: 5
+
+Misc Information:
+ - Since Teleport Ticks: 353
+ - Since Riptide Ticks: 410
+ - Flying Delay: 1
+ - Since Velocity Ticks: 353
+ - Since Firework Ticks: 410
+ - Ticks Existed: 253
+ - Since Vehicle Ticks: 310
+ - Joined: 16 seconds ago
+
+All Violations:
+ - Ground Spoof (Type B) [VL: 5] (Spoofed OnGround value.)
+
+Blocks Nearby: [AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR]
+Entities Nearby: []
+Potion Effects: []
+---------------------------------------------------------------------------
+
+
+--------------[ Cake_HD was punished for Ground Spoof (Type B) ]--------------
+
+Location:
+ - World: world
+ - X: -1799.7642091629934
+ - Y: 80.8480597273338
+ - Z: -7665.497165645196
+
+Information:
+ - UUID: bb278a5b-91b9-49b7-93ce-64697b63cdc6
+ - Keep Alive Ping: 0
+ - Transaction Ping: 125
+ - Server TPS: 20
+ - Sensitivity: 0
+ - Gamemode: SURVIVAL
+ - Client Brand: Fabric
+ - Vehicle: null
+ - Version: 1.19.1
+ - Last Damage: 8.4 seconds ago
+
+Total Violations: 5
+ - Combat Violations: 0
+ - Movement Violations: 0
+ - Player Violations: 5
+
+Misc Information:
+ - Since Teleport Ticks: 63
+ - Since Riptide Ticks: 266
+ - Flying Delay: 56
+ - Since Velocity Ticks: 168
+ - Since Firework Ticks: 266
+ - Ticks Existed: 68
+ - Since Vehicle Ticks: 166
+ - Joined: 5 seconds ago
+
+All Violations:
+ - Ground Spoof (Type B) [VL: 5] (Spoofed OnGround value.)
+
+Blocks Nearby: [AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR, AIR]
+Entities Nearby: []
+Potion Effects: []
+---------------------------------------------------------------------------
+
+

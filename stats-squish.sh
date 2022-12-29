@@ -1,3 +1,7 @@
+if [[ $(date '+%d') != 01 ]]; then
+  exit
+fi
+
 mysqluser="aurelium"
 mysqlpass="NHCwp2D6NU9Z8cX5"
 mysqldb="hardline_aurelium"

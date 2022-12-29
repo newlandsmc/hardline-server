@@ -38,9 +38,9 @@ schematics:
 
 # The enabled loot-tables that DropCrates will randomly select from.
 enabled_loottables:
-  - "food,10"
-  - "gear,5"
-  - "weapons,2"
+  - "daily,10"
+  - "premium,5"
+  - "vote,2"
 
 #
 # To create a loot-table, create a YML config file named exactly what has been set in 'enabled_loottables' omitting the YML file extension.

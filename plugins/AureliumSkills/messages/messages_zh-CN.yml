@@ -569,6 +569,21 @@ commands:
     remove: '&7成功为玩家 &6{player} &7取走了技能 &b{skill} &7的 &b{amount} &7点熟练度'
   unknown_skill: '&e未知技能!'
   no_profile: '&e该玩家没有属性文档!'
+  profile:
+    skills: |-
+      玩家 &6{name} &7的 Aurelium Skills 详细描述:
+      &7玩家 UUID: &f{uuid}
+      &7技能: {skill_entries}
+    skill_entry: |2-
+
+      &3{skill} &7- 等级: &f{level}&7, 经验值: &f{xp}
+    stats: |-
+      玩家 &6{name} &7的 Aurelium Skills 详细描述:
+      &7玩家 UUID: &f{uuid}
+      &7属性: {stat_entries}
+    stat_entry: |2-
+
+        &3{stat} &7- 总等级: &f{total_level}&7, 基础等级: &f{base_level}&7, 翻倍等级: &f{modified_level}
 leveler:
   title: '&a{skill} 等级提升'
   subtitle: '&6{old} ➜ {new}'
@@ -909,7 +924,7 @@ units:
   mana: 魔法值
   hp: 血量
   xp: 经验
-file_version: 25
+file_version: 27
 sources:
   farming:
     wheat: 小麦
@@ -952,6 +967,9 @@ sources:
     flowering_azalea: 盛开的杜鹃花丛
     azalea_leaves: 杜鹃树叶
     flowering_azalea_leaves: 盛开的杜鹃树叶
+    mangrove_log: 红树原木
+    mangrove_leaves: 红树树叶
+    mangrove_roots: 红树根
   mining:
     stone: 石头
     cobblestone: 圆石
@@ -1000,6 +1018,7 @@ sources:
     ice: 冰
     packed_ice: 浮冰
     blue_ice: 蓝冰
+    reinforced_deepslate: 强化深板岩
   fishing:
     cod: 鳕鱼
     salmon: 鲑鱼
@@ -1022,6 +1041,8 @@ sources:
     soul_soil: 灵魂土
     red_sand: 红沙
     rooted_dirt: 缠根泥土
+    mud: 泥巴
+    muddy_mangrove_roots: 沾泥的红树根
   mobs:
     player: 玩家
     bat: 蝙蝠
@@ -1095,6 +1116,10 @@ sources:
     axolotl: 美西螈
     glow_squid: 发光鱿鱼
     goat: 山羊
+    allay: 悦灵
+    frog: 青蛙
+    tadpole: 蝌蚪
+    warden: 监守者
   defense:
     mob_damage: 来自生物的伤害
     player_damage: 来自玩家的伤害
@@ -1119,6 +1144,11 @@ sources:
     book_per_level: 附魔书
   sorcery:
     mana_ability_use: 使用魔法技能
+    sculk: 幽匿块
+    sculk_vein: 幽匿脉络
+    sculk_sensor: 幽匿感测体
+    sculk_catalyst: 幽匿催发体
+    sculk_shrieker: 幽匿尖啸体
   healing:
     drink_regular: 饮用普通药水
     drink_extended: 饮用延长时长的药水

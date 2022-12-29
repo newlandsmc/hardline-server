@@ -7,6 +7,7 @@ npc:
       iterations-per-tick: 5000
       check-bounding-boxes: false
       open-doors: false
+      maximum-iterations: 5000
     defaults:
       destination-teleport-margin: -1
     default-distance-margin: 2
@@ -20,6 +21,9 @@ npc:
     attack-range: 3.0625
     use-new-finder: false
     maximum-visited-nodes: 768
+    default-destination-teleport-margin: -1
+    default-range-blocks: 75.0
+    maximum-visited-blocks: 768
   default:
     bossbar-view-range: 64
     waypoints:
@@ -30,6 +34,7 @@ npc:
       random-look-enabled: false
       random-look-delay: 60
       disable-while-navigating: true
+      realistic-looking: false
     pathfinding:
       range: 75.0
     random-talker: false
@@ -39,8 +44,12 @@ npc:
     talk-close:
       enabled: false
       range: 5
+      random-talker: false
+      text:
+        '0': Hi, I'm <npc>!
     text:
       '0': Hi, I'm <npc>!
+    block-breaker-radius: -1
   chat:
     options:
       bystanders-hear-targeted-chat: false
@@ -111,6 +120,7 @@ npc:
     enable: true
   defaults:
     block-breaker-radius: -1
+  delay-player-teleport-ticks: -1
 general:
   authlib:
     profile-url: https://sessionserver.mojang.com/session/minecraft/profile/

@@ -174,18 +174,12 @@ change-prefix-suffix-in-tablist:
 # Shows your current health (with life indicator), your current ping or any NUMBER placeholder
 # after the player's name (before the ping indicator).
 tablist-object-type:
-
-  # Objective settings
   object-settings:
 
     # Custom placeholder - accepts only number-ending placeholders, like %level%
     custom:
       value: '%level%'
-
-    # The player's health - displayed after the player's name.
     health:
-
-      # For these players the health will not be displayed
       restricted-players:
       - exampleplayer
       - players
