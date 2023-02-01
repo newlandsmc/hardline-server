@@ -141,13 +141,13 @@ Tagged In Combat:
     Punish On Kick: false
     Log To File: true
     Money Penalty: 0
-    Kill on Logout: true
+    Kill on Logout: false
     Spawn NPC:
       Enabled: true
       NPC Name: ''
       NPC Despawn Time: 30
       Block Login: false
-      Targetable By Mobs: true
+      Targetable By Mobs: false
       Spawn On All Logouts: false
       WorldGuard Exclusions: []
     Drops On Death:

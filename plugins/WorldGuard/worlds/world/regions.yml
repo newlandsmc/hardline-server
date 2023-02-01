@@ -10,51 +10,6 @@
 # REMEMBER TO KEEP PERIODICAL BACKUPS.
 #
 regions:
-    fasttravel--7500--7500:
-        min: {x: -7508, y: 55, z: -7508}
-        max: {x: -7492, y: 70, z: -7492}
-        members: {}
-        flags: {deny-message: §cYou cannot do that near a FastTravel., block-break: deny,
-            passthrough: allow, pvp: deny, block-place: deny}
-        owners: {}
-        type: cuboid
-        priority: 0
-    boatrace-1:
-        min: {x: -720, y: 55, z: -7990}
-        max: {x: -240, y: 85, z: -7670}
-        members: {}
-        flags: {deny-message: §cYou cannot do that near a boat race track., block-break: deny,
-            passthrough: allow, pvp: deny, block-place: deny}
-        owners:
-            unique-ids: [37d6fd08-da41-4b94-9523-ddd75c62470d]
-        type: cuboid
-        priority: 0
-    fasttravel-7500-7500:
-        min: {x: 7492, y: 60, z: 7492}
-        max: {x: 7508, y: 73, z: 7508}
-        members: {}
-        flags: {deny-message: §cYou cannot do that near a FastTravel., block-break: deny,
-            passthrough: allow, pvp: deny, block-place: deny}
-        owners: {}
-        type: cuboid
-        priority: 0
-    fasttravel--7500-7500:
-        min: {x: -7508, y: 56, z: 7492}
-        max: {x: -7492, y: 70, z: 7508}
-        members: {}
-        flags: {deny-message: §cYou cannot do that near a FastTravel., block-break: deny,
-            passthrough: allow, pvp: deny, block-place: deny}
-        owners: {}
-        type: cuboid
-        priority: 0
-    fasttravel-7500--7500:
-        min: {x: 7492, y: 57, z: -7508}
-        max: {x: 7508, y: 69, z: -7492}
-        members: {}
-        flags: {deny-message: §cYou cannot do that near a FastTravel.}
-        owners: {}
-        type: cuboid
-        priority: 0
     __global__:
         members: {}
         flags: {}
