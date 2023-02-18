@@ -1,8 +1,0 @@
-difficulty:
-  # This determines the EXTRA mob health in relation to the player's power level.
-  # The forumla is: mob health = ( ( defense-5 ) / divide-by ) * base_health + base_health
-  divide-by: 92
-  hostile-only: true
-  player-distance: 512
-  use-power-level: false # if false, it will use defense level
-natural-reason-only: true
